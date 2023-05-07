@@ -30,6 +30,94 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom styles (added by me) -->
+    <style>
+        /* welcome bar styles */
+        .welcomeContainer {
+			background-color: rgb(56, 56, 56);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.left {
+			font-weight: bold;
+		}
+
+		.center {
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.right {
+			text-align: right;
+			font-weight: bold;
+		}
+
+        /* slideshow styles */
+        .slideContainer{
+            width:90%;
+            position:absolute;
+            /* transform: translate(10%,-0%); */
+            margin:auto;
+            overflow: hidden;
+            /* border: 20px solid #ffffff; */
+            /* border-radius: 8px; */
+            /* box-shadow: 10px 25px 30px rgba(30,30,200,0.3); */
+            z-index: 999;
+            /* display:block; */
+        }
+        .slideWrapper{
+            width:360vw;
+            display: flex;
+            height:50%;
+            animation: slide 30s infinite;
+        }
+        @keyframes slide{
+            0%{
+                transform: translateX(0);
+            }
+            25%{
+                transform: translateX(0);
+            }
+            30%{
+                transform: translateX(-25%);
+            }
+            50%{
+                transform: translateX(-25%);
+            }
+            55%{
+                transform: translateX(-50%);
+            }
+            75%{
+                transform: translateX(-50%);
+            }
+            80%{
+                transform: translateX(-75%);
+            }
+            100%{
+                transform: translateX(-75%);
+            }
+        }
+        .slideImg{
+            width: 100%;
+           /* display:flex; */
+           /* height:50 %; */
+        }
+        
+        #projects:target::before {
+            content: "";
+            display: block;
+            height: 200px;
+            margin: -120px 0 0;
+            /* fixed header height*/
+        }
+
+	</style>
+
 </head>
 
 <body>
@@ -119,130 +207,48 @@
         </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Carousel Start -->
-    <div style="position:relative;" class="container-fluid p-0 pb-5">
-        <!-- start Troos text and buttons -->
+
+    <!-- welcome bar start -->
+    <div class="welcomeContainer">
+		<div class="left">
+            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To <mark>Troos</mark></h5>
+        </div>
+        <div class="right">
+            <!-- <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;"><mark style="background:rgb(37, 37, 37);color:white;"> Let us build your dream house</mark></p> -->
+        </div>
+		<div class="right">
+            <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;"><mark style="background:rgb(37, 37, 37);color:white;">Custom</mark> recreational, off-grid & Tiny Homes</mark></p>
+        </div>
+	</div>
+    <!-- welcome bar end -->
+
+    <!-- auto slideshow start -->
+
+        <div class="slideContainer" style="position:relative; margin-top:1vh;">
             <div style="align-self:center; justify-self:center;" class="col-12 col-lg-8 text-center centeredText">
-                <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To <mark>Troos</mark></h5>
+                <!-- <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To <mark>Troos</mark></h5>
                 <h1 class="display-3 text-white animated slideInDown mb-4"><span>Recreational, Off-Grid & <br>Tiny Homes</span></h1>
-                <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;">We realise your custom dream house, from planning to final delivery</mark></p>
-                <a href="#feature" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;">We realise your custom dream house, from planning to final delivery</mark></p> -->
+                <a href="#projects" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">See Projects</a>
                 <!-- <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a> -->
             </div>
-        <!-- end Troos text and buttons -->
-        
-        <!-- 1 -->
-        <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Ijs1/af1 aangepast.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
+            <div class="slideWrapper">
+                <img src="img/about page 1/Ijs1/af1 aangepast.png" class="slideImg">
+                <img src="img/about page 1/Apeldoorn/apeldoorn_glas_warm_landing.png" class="slideImg">
+                <img src="img/about page 1/Hanne/hanne_1_landing.png" class="slideImg">
+                <img src="img/about page 1/Hanne/hanne_1_landing.png" class="slideImg">
             </div>
-            <!-- 2 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Apeldoorn/apeldoorn_glas_warm_landing.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 3 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Hanne/hanne_1_landing.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 4 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Apeldoorn/big_portfolio_item_1.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 5 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Christiaan/Christiaan1.jpeg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 6 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Ijs2/ijsselmuiden2.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 7 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Apeldoorn/apeldoorn1.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 8 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Hanne/hanne1.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 9 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/tekening.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 10 -->
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/about page 1/Ijs1/ijsselmuiden1_2_landing.png" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(53, 53, 53, .7);">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 11 -->
-
-            <!-- EPE TOEVOEGEN -->
-
         </div>
-    </div>
+
+    <!-- auto slideshow end -->
+
+    <!-- Carousel Start -->
+    
     <!-- Carousel End -->
 
 
     <!-- Feature Start -->
-    <div class="container-xxl py-5" id="feature">
+    <!-- <div class="container-xxl py-5" id="feature">
         <div class="row">
             <div class="col-6">
                 <div class="d-flex align-items-center">
@@ -293,16 +299,16 @@
     </div>
 </div>
 </div>
-    </div>
-    <!-- Feature Start -->
+    </div> -->
+    <!-- Feature end -->
 
     <!-- Service Start -->
     <div class="container-xxl py-5" id="projects">
         <div class="container">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Project Gallery</h1>
+                <!-- <h1 class="display-5 mb-5">Project Gallery</h1> -->
             </div>
-            <h3 style="text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">A Selection of our work</h3>
+            <h3 style="text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;" id="projectsText">A Selection of our work</h3>
             <br>
             <div id="serviceText">
             </div>
@@ -383,7 +389,7 @@
                 </div>
                 <!-- ROBIN ERBIJ MET BETERE FOTO'S ?? -->
 
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <!-- <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/about page 1/your_project.png" alt="">
@@ -394,25 +400,10 @@
                             <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-            </div>
+            <img src="img/shareProjectText.PNG" alt="" style="margin-top:10vh;">
 
-                <div style="margin-left:10vw;">
-                    <h3 style="margin-top:3vh; text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">
-                        Share your project with us <br>
-                    </h3>                
-                    <br>
-                    <h3 style="margin-left:13vw; margin-top:0.5vh;text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">
-                        &
-                    </h3>
-                    <br>
-                    <h3 style="margin-left:15vw; margin-top:0.5vh;text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">
-                        let's bring your vision to life!
-                    </h3>
-                    <br>
-                </div>
-        </div>
         <!-- <div style="padding-left:35%; margin-top:4vh;">
             <img class="visionImage" src="img/vision.jpg" alt="">
             <img style="padding-top:4vh;" src="img/conveyor-anim1.gif" height="100vh" alt="">
@@ -548,7 +539,7 @@
     <div class="container-xxl py-5">
         <div class="container services">
             <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Options/Services</h1>
+                <!-- <h1 class="display-5 mb-5">Options/Services</h1> -->
             </div>
             <h3 style="text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">a small selection of the available options</h3>
             <br>
@@ -1149,6 +1140,25 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <!-- js for slideshow -->
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 6000); // Change image every 2 seconds
+        }
+        </script>
+
 </body>
 
 </html>
