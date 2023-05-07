@@ -60,50 +60,122 @@
         /* slideshow styles */
         .slideContainer{
             width:90%;
-            position:absolute;
+            position:relative;
             /* transform: translate(10%,-0%); */
-            margin:auto;
+            /* margin:auto; */
             overflow: hidden;
             /* border: 20px solid #ffffff; */
             /* border-radius: 8px; */
             /* box-shadow: 10px 25px 30px rgba(30,30,200,0.3); */
             z-index: 999;
             /* display:block; */
+            display:block !important;
+            margin:auto;
+            margin-top:1vh;
+            /* height:160vh; */
         }
         .slideWrapper{
-            width:360vw;
+            width:1080vw;
             display: flex;
             height:50%;
-            animation: slide 30s infinite;
+            animation: slide 100s infinite;
         }
         @keyframes slide{
-            0%{
-                transform: translateX(0);
-            }
-            25%{
-                transform: translateX(0);
-            }
-            30%{
-                transform: translateX(-25%);
-            }
-            50%{
-                transform: translateX(-25%);
-            }
-            55%{
-                transform: translateX(-50%);
-            }
-            75%{
-                transform: translateX(-50%);
-            }
-            80%{
-                transform: translateX(-75%);
-            }
-            100%{
-                transform: translateX(-75%);
-            }
-        }
+  /* 1 */
+  0%{
+    transform: translateX(0);
+  }
+  6.666%{
+    transform: translateX(0);
+  }
+  /* 2 */
+  13.333%{
+    transform: translateX(-8.33%);
+  }
+  13.333%{
+    transform: translateX(-8.33%);
+  }
+  /* 3 */
+  20%{
+    transform: translateX(-16.66%);
+  }
+  20%{
+    transform: translateX(-16.66%);
+  }
+  /* 4 */
+  26.666%{
+    transform: translateX(-25%);
+  }
+  26.666%{
+    transform: translateX(-25%);
+  }
+  /* 5 */
+  33.333%{
+    transform: translateX(-33.33%);
+  }
+  33.333%{
+    transform: translateX(-33.33%);
+  }
+  /* 6 */
+  40%{
+    transform: translateX(-41.66%);
+  }
+  40%{
+    transform: translateX(-41.66%);
+  }
+  /* 7 */
+  46.666%{
+    transform: translateX(-50%);
+  }
+  46.666%{
+    transform: translateX(-50%);
+  }
+  /* 8 */
+  53.333%{
+    transform: translateX(-58.33%   );
+  }
+  53.333%{
+    transform: translateX(-58.33%);
+  }
+  /* 9 */
+  60%{
+    transform: translateX(-66.66%);
+  }
+  60%{
+    transform: translateX(-66.66%);
+  }
+  /* 10 */
+   66.666%{
+    transform: translateX(-75%);
+  }
+  66.666%{
+    transform: translateX(-75%);
+  }
+  /* 11 */
+  73.333%{
+    transform: translateX(-83.33%);
+  }
+  73.333%{
+    transform: translateX(-83.33%);
+  }
+  /* 12 */
+  80%{
+    transform: translateX(-91.66%);
+  }
+  80%{
+    transform: translateX(-91.66%);
+  }
+  100%{
+    transform: translateX(-91.66%);
+  }
+  100%{
+    transform: translateX(-91.66%);
+  }
+
+}
         .slideImg{
             width: 100%;
+            height:100%;
            /* display:flex; */
            /* height:50 %; */
         }
@@ -116,11 +188,52 @@
             /* fixed header height*/
         }
 
+        #aboutLink:target::before {
+            content: "";
+            display: block;
+            height: 50px;
+            margin: -120px 0 0;
+            /* fixed header height*/
+        }
+
+        #optionsLink:target::before {
+            content: "";
+            display: block;
+            height: 175px;
+            margin: -120px 0 0;
+            /* fixed header height*/
+        }
+
+        #testimonialsLink:target::before {
+            content: "";
+            display: block;
+            height: 200px;
+            margin: -120px 0 0;
+            /* fixed header height*/
+        }
+
+        /* fixed bottom bar (white stripe) */
+        #bottom-bar {
+            position: fixed;
+            /* left: 0; */
+            /* right: 0; */
+            width:100%;
+            bottom: 0;
+            height: 1vh;
+            background-color: white;
+            z-index: 1000;
+        }
+
 	</style>
 
 </head>
 
-<body>
+<body > 
+    <!-- fixed bottom bar (white stripe) -->
+    <div id="bottom-bar">
+        <!-- Content of the fixed bar goes here -->
+      </div>
+
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -162,6 +275,7 @@
         </div>
     </div>
     <!-- Topbar End -->
+    
 
 
     <!-- Navbar Start -->
@@ -187,7 +301,7 @@
 
             </div>
 
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <div class="navbar-nav ms-auto p-4 p-lg-0" id="navBar">
                 <a href="#top" class="nav-item nav-link active">Home</a>
                 <a href="#feature" class="nav-item nav-link">About</a>
                 <a href="#projects" class="nav-item nav-link">Projects</a>
@@ -209,7 +323,7 @@
     <!-- Navbar End -->
 
     <!-- welcome bar start -->
-    <div class="welcomeContainer">
+    <div class="welcomeContainer" id="welcomeContainer">
 		<div class="left">
             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To <mark>Troos</mark></h5>
         </div>
@@ -217,26 +331,48 @@
             <!-- <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;"><mark style="background:rgb(37, 37, 37);color:white;"> Let us build your dream house</mark></p> -->
         </div>
 		<div class="right">
-            <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;"><mark style="background:rgb(37, 37, 37);color:white;">Custom</mark> recreational, off-grid & Tiny Homes</mark></p>
+            <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;"><mark style="background:rgb(37, 37, 37);color:white;">Custom</mark> Recreational, Off-grid & Tiny Homes</mark></p>
         </div>
 	</div>
     <!-- welcome bar end -->
 
     <!-- auto slideshow start -->
 
-        <div class="slideContainer" style="position:relative; margin-top:1vh;">
+        <div class="slideContainer">
             <div style="align-self:center; justify-self:center;" class="col-12 col-lg-8 text-center centeredText">
                 <!-- <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To <mark>Troos</mark></h5>
                 <h1 class="display-3 text-white animated slideInDown mb-4"><span>Recreational, Off-Grid & <br>Tiny Homes</span></h1>
                 <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;">We realise your custom dream house, from planning to final delivery</mark></p> -->
-                <a href="#projects" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">See Projects</a>
+                <a href="#projects" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">See Projects &nbsp; <i class='fas fa-arrow-down'></i></a>
+
                 <!-- <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a> -->
             </div>
             <div class="slideWrapper">
+                <!-- 1 -->
                 <img src="img/about page 1/Ijs1/af1 aangepast.png" class="slideImg">
+                <!-- 2 -->
                 <img src="img/about page 1/Apeldoorn/apeldoorn_glas_warm_landing.png" class="slideImg">
+                <!-- 3 -->
                 <img src="img/about page 1/Hanne/hanne_1_landing.png" class="slideImg">
-                <img src="img/about page 1/Hanne/hanne_1_landing.png" class="slideImg">
+                <!-- 4 -->
+                <img src="img/about page 1/Apeldoorn/big_portfolio_item_1.png" class="slideImg">
+                <!-- 5 -->
+                <img src="img/about page 1/Christiaan/Christiaan1.jpeg" class="slideImg">
+                <!-- 6 -->
+                <img src="img/about page 1/Ijs2/ijsselmuiden2.png" class="slideImg">
+                <!-- 7 -->
+                <img src="img/about page 1/Apeldoorn/apeldoorn1.png" class="slideImg">
+                <!-- 8 -->
+                <img src="img/about page 1/Hanne/hanne_1_licht.png" class="slideImg">
+                <!-- 9 -->
+                <img src="img/about page 1/epe/epeLanding.png" class="slideImg">
+                <!-- 10 -->
+                <img src="img/about page 1/Ijs1/ijsselmuiden1_2_landing.png" class="slideImg">
+                <!-- 11 -->
+                <img src="img/about page 1/apeldoorn/apeldoornBosLanding.png" class="slideImg">
+                <!-- 12 -->
+                <img src="img/about page 1/tekening.png" class="slideImg">
+            
             </div>
         </div>
 
@@ -402,6 +538,9 @@
                     </div>
                 </div> -->
 
+                <!-- button -->
+                <a href="#aboutLink" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">About Us &nbsp; <i class='fas fa-arrow-down'></i></a>
+
             <img src="img/shareProjectText.PNG" alt="" style="margin-top:10vh;">
 
         <!-- <div style="padding-left:35%; margin-top:4vh;">
@@ -417,14 +556,14 @@
   
 
     <!-- Service End -->
-
+<div id="aboutLink"></div>
  <!-- About Start -->
  <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="about">
     <div class="container about px-lg-0">
         <div class="row g-0 mx-lg-0">
             <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid w-100 h-100" src="img/about page 1/Epe/epe.jpeg" style="object-fit: cover;" alt="">
+                    <img class="position-absolute img-fluid w-100 h-100" src="img/about page 1/Epe/epe_lager.jpg" style="object-fit: cover;" alt="">
                 </div>
             </div>
             <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -460,7 +599,8 @@
                             </div>
                         </div>
                     </div> -->
-                    <a href="#projects" class="btn btn-primary py-3 px-5">Explore More</a>
+                    <a href="#testimonialsLink" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">What clients say about us &nbsp; <i class='fas fa-arrow-down'></i></a>
+
                 </div>
             </div>
         </div>
@@ -535,8 +675,130 @@
     </div>
 </div>
 <!-- Feature End -->
+
+<!-- Testimonial Start -->
+<div id="testimonialsLink"></div>
+<div class="container-xxl py-5 wow fadeInUp" id="testimonials" data-wow-delay="0.1s">
+    <div class="container" style="font-size:smaller;">
+        <div class="section-title text-center">
+            <h1 class="display-5 mb-5">What Clients Say About Us</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        Eindelijk een 2e living room. De plaatjes spreken voor zich, heel leuk om gezamenlijk tijdens een bouwproject, alles zo te krijgen hoe je het wilt dat het wordt.
+                        En ja, nadat het klaar is, kan ik volmondig zeggen, het is gelukt!                    </p>
+                    <h4 class="mb-1">Christiaan</h4>
+                    <span class="fst-italic"><h5>Tuinhuis Amsterdam</h5></span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN
+                    <h5 class="mb-1">Hanne</h5>
+                    <span class="fst-italic">Tiny House Amsterdam</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Epe/epe.png" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN    
+                    </p>
+                    <h5 class="mb-1">Hans</h5>
+                    <span class="fst-italic">Recreatiewoning Epe</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_1_tn.png" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN    
+                    </p>
+                    <h5 class="mb-1">Karline</h5>
+                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN    
+                    </p>
+                    <h5 class="mb-1">Robin</h5>
+                    <span class="fst-italic">Tiny House Amsterdam</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_2_landing.png" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN    
+                    </p>
+                    <h5 class="mb-1">Lucinda</h5>
+                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/your_project.png" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN    
+                    </p>
+                    <h5 class="mb-1">Hans</h5>
+                    <span class="fst-italic">Tuinhuis</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs2/ijsselmuiden_2_minder_hoog_tn.png" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN    
+                    </p>
+                    <h5 class="mb-1">Mirjam & Cees</h5>
+                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Apeldoorn/apedloorn WK.png" style="width: 210px; height: 130px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLLEN    
+                    </p>
+                    <h5 class="mb-1">Lucinda</h5>
+                    <span class="fst-italic">Recreatiewoning Apeldoorn</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
     <!-- start services section -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="optionsLink">
         <div class="container services">
             <div class="section-title text-center">
                 <!-- <h1 class="display-5 mb-5">Options/Services</h1> -->
@@ -813,128 +1075,6 @@
                  -->
     <!-- end services section -->
 
-
-
-<!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" id="testimonials" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="section-title text-center">
-            <h1 class="display-5 mb-5">Testimonials</h1>
-        </div>
-        <div class="owl-carousel testimonial-carousel">
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        Eindelijk een 2e living room. De plaatjes spreken voor zich, heel leuk om gezamenlijk tijdens een bouwproject, alles zo te krijgen hoe je het wilt dat het wordt.
-                        En ja, nadat het klaar is, kan ik volmondig zeggen, het is gelukt!                    </p>
-                    <h5 class="mb-1">Christiaan</h5>
-                    <span class="fst-italic">Tuinhuis Amsterdam</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN
-                    <h5 class="mb-1">Hanne</h5>
-                    <span class="fst-italic">Tiny House Amsterdam</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Epe/epe.png" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Hans</h5>
-                    <span class="fst-italic">Recreatiewoning Epe</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_1_tn.png" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Karline</h5>
-                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Robin</h5>
-                    <span class="fst-italic">Tiny House Amsterdam</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_2_landing.png" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Lucinda</h5>
-                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/your_project.png" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Hans</h5>
-                    <span class="fst-italic">Tuinhuis</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs2/ijsselmuiden_2_minder_hoog_tn.png" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Mirjam & Cees</h5>
-                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Apeldoorn/apedloorn WK.png" style="width: 210px; height: 130px;">
-                <div class="testimonial-text text-center p-4">
-                    <p>
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Lucinda</h5>
-                    <span class="fst-italic">Recreatiewoning Apeldoorn</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial End -->
-
     <!-- Quote Start -->
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="contact">
         <div class="container quote px-lg-0">
@@ -947,10 +1087,10 @@
                 <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Get in Contact</h1>
+                            <h1 class="display-5 mb-4"> Want your own? </h1>
                         </div>
-                        <p class="mb-4 pb-2">Share your project, ask about the possibilities</p>
-                        <form action="https://formsubmit.co/your@email.com" method="POST">
+                        <p class="mb-4 pb-2"><b>Contact us</b>, lets talk Posibilities</p>
+                        <form action="https://formsubmit.co/e2a3109e56f2b784903eb6ae24352c31" method="POST">
                             <div class="row g-3">
                                 <input type="hidden" name="_subject" value="message from ContactForm">
                                 
