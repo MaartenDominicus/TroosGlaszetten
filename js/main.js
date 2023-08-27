@@ -65,11 +65,12 @@
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
+        autoplayTimeout: 10000,
         smartSpeed: 1000,
         center: true,
         dots: false,
         loop: true,
-        nav : true,
+        nav : false,
         navText : [
             '<i class="bi bi-arrow-left"></i>',
             '<i class="bi bi-arrow-right"></i>'
@@ -78,7 +79,7 @@
             0:{
                 items:1
             },
-            768:{
+            1768:{
                 items:2
             }
         }

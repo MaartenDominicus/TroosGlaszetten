@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=cand:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans" />
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -31,8 +32,21 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+
+
     <!-- Custom styles (added by me) -->
     <style>
+
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
         /* welcome bar styles */
         .welcomeContainer {
 			background-color: rgb(56, 56, 56);
@@ -58,8 +72,12 @@
 		}
 
         /* slideshow styles */
+        .slideDiv{
+            width: device-width;/* set width of slideshow to device's width */
+        }
+
         .slideContainer{
-            width:90%;
+            width:90%; /* 90% of parent(slideDiv) width = 90% of 'device-width' */
             position:relative;
             overflow: hidden;
             z-index: 999;
@@ -67,11 +85,41 @@
             margin-top:1vh;
         }
         .slideWrapper{
-            width:1200%;
+            width:1200%; /* 12*100% because the slideshow contains 12 images, each of 100% width of the .slideContainer class */
             display: flex;
-            /* height:50%; */
             animation: slide 100s infinite;
+            /* height: auto; */
         }
+
+        .slideImg{
+            /* max-width:100%; */
+            width: 100%; /*100% of parent which is 100% of slidecontainer = 90% of 'device width' */
+            height: 100%;
+            /* max-height:100vh;           */
+        }
+
+        .imgContainer {
+            width:95vw;
+            text-align: center;
+            border: 10px solid red;
+            /* display:flex; */
+        }
+        
+        .gridImg {
+            display: inline-block;
+            height: 500px;
+            padding: 1vw;
+            /* border: 2px solid green; */
+            /* width:auto; */
+        }
+
+         .thumbnailImg{
+            width:100%;
+            height:100%;
+            max-height:inherit; min-height:inherit;
+            /* min-width:inherit; max-width:inherit; */
+        }
+
         @keyframes slide{
   /* 1 */
   0%{
@@ -165,12 +213,6 @@
   }
 
 }
-        .slideImg{
-            width: 100%;
-            /* height:100%; */
-           /* display:flex; */
-           /* height:50 %; */
-        }
         
         #projects:target::before {
             content: "";
@@ -224,10 +266,69 @@
             z-index: 1000;
         }
 
-        .slideMom{
-            width: device-widht;
-        }
-	</style>
+        /* hover effects for thumbnails */
+        .gridImg:hover img:hover {
+            transform: scale(1.06);
+            transition: transform 2s ease-in-out, filter 1s ease-in-out;
+            filter: saturate(200%);
+            }
+
+            #imageTextGrid.hovered img:hover {
+            /* transform: scale(1.06); */
+            transition: transform 2s ease-in-out, filter 1s ease-in-out;
+            filter: saturate(159%);
+            }
+
+            #imageTextGrid.hovered img{
+                /* opacity: 0; */
+                filter: saturate(25%);
+                background-color: red;
+                
+                
+            }
+
+            .gridImg img{
+                width:100%;
+                height:100%;
+                transition: transform 5s ease-in-out, filter 1s ease-in-out;
+
+            }
+
+            .gridImg{
+                overflow:hidden;
+            }
+            #imageTextGrid {
+                width:95vw;
+                text-align: center;                /* center images in grid */
+                /* border: 2px solid red; */
+                /* display:flex; */
+            }
+            
+            .gridImg {
+                display: inline-block;
+                /* max-height:50vh; */
+                min-height:20vh;
+                padding: 0vw;
+                margin:.8vw;
+                width:auto;
+                overflow: hidden;
+            }
+
+            #imageTextGrid img{
+                width:100%;
+                height:100%;
+                padding:0vw;
+                max-height:inherit; min-height:inherit;
+            }
+
+            h1 { font-family: PT Sans; font-size: 36px; font-style: normal; font-variant: normal; font-weight: 900; line-height: 26.4px; } h2 { font-family: PT Sans; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 900; line-height: 26.4px; }h3 { font-family: PT Sans; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: PT Sans; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: PT Sans; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: PT Sans; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5667px; }
+
+            .projectTitle{
+                text-align:left;
+                margin-left:5vw;
+            }
+
+</style>
 
 </head>
 
@@ -328,241 +429,13 @@
     <!-- Navbar End -->
 
     <!-- welcome bar start -->
-    <div class="welcomeContainer" id="welcomeContainer">
-		<div class="left">
-            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To <mark>Troos</mark></h5>
-        </div>
-        <div class="right">
-            <!-- <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;"><mark style="background:rgb(37, 37, 37);color:white;"> Let us build your dream house</mark></p> -->
-        </div>
-		<div class="right">
-            <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;"><mark style="background:rgb(37, 37, 37);color:white;">Custom</mark> Recreational, Off-grid & Tiny Homes</mark></p>
-        </div>
-	</div>
+
     <!-- welcome bar end -->
-
-    <!-- auto slideshow start -->
-<div class="slideMom">
-        <div class="slideContainer">
-            <div style="align-self:center; justify-self:center;" class="col-12 col-lg-8 text-center centeredText">
-                <!-- <h5 class="text-white text-uppercase mb-3 animated slideInDown">Welcome To <mark>Troos</mark></h5>
-                <h1 class="display-3 text-white animated slideInDown mb-4"><span>Recreational, Off-Grid & <br>Tiny Homes</span></h1>
-                <p class="fs-5 fw-medium text-white mb-4 pb-2"><mark style="background-color:rgba(0, 0, 0, .0); color:white;">We realise your custom dream house, from planning to final delivery</mark></p> -->
-                <a href="#projects" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">See Projects &nbsp; <i class='fas fa-arrow-down'></i></a>
-
-                <!-- <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Free Quote</a> -->
-            </div>
-            <div class="slideWrapper">
-                <!-- 1 -->
-                <img src="img/about page 1/Ijs1/af1 aangepast.png" class="slideImg">
-                <!-- 2 -->
-                <img src="img/about page 1/Apeldoorn/apeldoorn_glas_warm_landing.png" class="slideImg">
-                <!-- 3 -->
-                <img src="img/about page 1/Hanne/hanne_1_landing.png" class="slideImg">
-                <!-- 4 -->
-                <img src="img/about page 1/Apeldoorn/big_portfolio_item_1.png" class="slideImg">
-                <!-- 5 -->
-                <img src="img/about page 1/Christiaan/Christiaan1.jpeg" class="slideImg">
-                <!-- 6 -->
-                <img src="img/about page 1/Ijs2/ijsselmuiden2.png" class="slideImg">
-                <!-- 7 -->
-                <img src="img/about page 1/Apeldoorn/apeldoorn1.png" class="slideImg">
-                <!-- 8 -->
-                <img src="img/about page 1/Hanne/hanne_1_licht.png" class="slideImg">
-                <!-- 9 -->
-                <img src="img/about page 1/epe/epeLanding.png" class="slideImg">
-                <!-- 10 -->
-                <img src="img/about page 1/Ijs1/ijsselmuiden1_2_landing.png" class="slideImg">
-                <!-- 11 -->
-                <img src="img/about page 1/apeldoorn/apeldoornBosLanding.png" class="slideImg">
-                <!-- 12 -->
-                <img src="img/about page 1/tekening.png" class="slideImg">
-            
-            </div>
-        </div>
-    </div> <!-- end slidemom div -->
-
-    <!-- auto slideshow end -->
-
-    <!-- Carousel Start -->
-    
-    <!-- Carousel End -->
-
-
-    <!-- Feature Start -->
-    <!-- <div class="container-xxl py-5" id="feature">
-        <div class="row">
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-user-check fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Made to design</h5>
-                        <p class="mb-2">customized for you</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-solid fa-seedling fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Quality Materials</h5>
-                        <p class="mb-2">& sustainable building</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-drafting-compass fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Efficient team</h5>
-                        <p class="mb-2">with broad experience</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-solid fa-toolbox fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Full project handling</h5>
-                        <p class="mb-2">from design to delivery</p>
-                    </div>
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-    </div> -->
-    <!-- Feature end -->
-
-    <!-- Service Start -->
-    <div class="container-xxl py-5" id="projects">
-        <div class="container">
-            <div class="section-title text-center">
-                <!-- <h1 class="display-5 mb-5">Project Gallery</h1> -->
-            </div>
-            <h3 style="text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;" id="projectsText">A Selection of our work</h3>
-            <br>
-            <div id="serviceText">
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/about page 1/Apeldoorn/apeldoorn_overzicht_tn.png" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h5 class="mb-3">One of A Kind Off-Grid Tiny Home</h5>
-                            <p>Built on the frame of an old train car,<br>big % of repurposed materials,<br>Surrounded by forest</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/about page 1/Ijs1/ijsselmuiden1_1_tn.png" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Energy-Neutral home at Riverside</h4>
-                            <p>Great insulation, Heat Pump & Underfloor Heating, wood fire for Coziness<br>inspiring view</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/about page 1/Hanne/hanne_1_licht_tn.png" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Tiny Home & Guest Residence</h4>
-                            <p>Cozy GuestHouse in Amsterdam Garden with bathroom and kitchen<br>panoramic garden view through double doors</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/about page 1/Ijs2/ijsselmuiden_2_minder_hoog_tn.png" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Spatious home in Modern Style</h4>
-                            <p>HR+++ Glass and sustainable Accoya wood,<br>Sliding doors leading to Wooden Deck with View over the River<br></p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/about page 1/Christiaan/Christiaan1.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Custom garden House</h4>
-                            <p>Cozy lounge area with heating,<br> Rain-water collection system,<br>Composite plank decking</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- EPE ERBIJ -->
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/about page 1//Epe/epe_tn.png" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Authentic forest House</h4>
-                            <p>Fully Renovated<br> in classic appearance,<br>with all modern comforts</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ROBIN ERBIJ MET BETERE FOTO'S ?? -->
-
-                <!-- <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/about page 1/your_project.png" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Custom Work</h4>
-                            <p>Provide your project details to us.<br><br><br></p>
-                            <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- button -->
-                <a href="#aboutLink" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">About Us &nbsp; <i class='fas fa-arrow-down'></i></a>
-
-            <img src="img/shareProjectText.PNG" alt="" style="margin-top:10vh;">
-
-        <!-- <div style="padding-left:35%; margin-top:4vh;">
-            <img class="visionImage" src="img/vision.jpg" alt="">
-            <img style="padding-top:4vh;" src="img/conveyor-anim1.gif" height="100vh" alt="">
-            <span style="font-size:2em;">LIFE</span>
-        </div> -->
-
-            </div>
-        </div>
-    </div>
 
   
 
-    <!-- Service End -->
-<div id="aboutLink"></div>
+
+    
  <!-- About Start -->
  <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="about">
     <div class="container about px-lg-0">
@@ -613,74 +486,45 @@
     </div>
 </div>
 <!-- About End -->
-<!-- Feature Start -->
-<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="services">
-    <div class="container feature px-lg-0">
-        <div class="row g-0 mx-lg-0">
-            <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                <div class="p-lg-5 ps-lg-0">
-                    <div class="section-title text-start">
-                        <h1 class="display-5 mb-4">We specialize in custom:</h1>
-                    </div>
-                    <p class="mb-4 pb-2">                    </p>
-                    <div class="row g-4">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                    <i class="fa fa-solid fa-cube fa-2x text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h5 class="mb-0">Tiny Houses</h5>
-                                    <p class="mb-2">small package, big value</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                    <i class="fa fa-thin fa-border-none fa-2x text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h5 class="mb-0">Off-Grid</h5>
-                                    <p class="mb-2">accomodation</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                    <i class="fa fa-house fa-2x text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h5 class="mb-0">Recreational Homes</h5>
-                                    <p class="mb-2">in all shapes and sizes</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                    <i class="fa fa-solid fa-tree fa-2x text-primary"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h5 class="mb-0">Garden Homes</h5>
-                                    <p class="mb-2">your getaway in walking distance</p>
-                                </div>
-                            </div>
-                            <br><br><br><br><br><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img style="margin-bottom:20px; object-fit:cover;" class="position-absolute w-100 h-100" src="img/feature.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Feature End -->
+
+    <!-- Service Start -->
+    <div id="imageTextGrid" name="overview" class="slideInRight">
+        <br><br>
+        <h1 class="projectTitle">Projects</h1>
+        <h1 class="projectTitle" style="opacity:0.5; margin-top:1vw;">New Construction</h1>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/1_apeldoorn.PNG" /></a>
+        <a href="https://www.google.com" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_ijsselmuiden_2.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/3_ijsselmuiden_3.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/4_christiaan.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/5_hanne.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/6_Maarn.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/7_Rijswijk.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_4_epe.PNG" /></a>
+        <!-- renovation -->
+        <br><br>
+        <h1 class="projectTitle" style="opacity:0.5;">Renovations</h1>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_1_dakopbouw.PNG" /></a>
+        <a href="https://www.google.com" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_2_mona.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_5_BKGalilei.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_6_vloerverwarming.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_7_stellaMaris.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_8_rioolApeldoorn.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_9_vlonder.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_10_rotterdam.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_11_dakUitbouw.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_12_hekMona.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_13_shivani.PNG" /></a>
+        <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_14_bkMerelbeke.PNG" /></a>
+
+
+        <!-- <div class="tile"><img class="thumbnailImg popupIjsselmuiden" src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder.png" /></div> -->
+      </div>
+  
+
+    <!-- Service End -->
+<div id="aboutLink"></div>
+
+
 
 <!-- Testimonial Start -->
 <div id="testimonialsLink"></div>
@@ -691,7 +535,7 @@
         </div>
         <div class="owl-carousel testimonial-carousel">
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/4_christiaan.PNG" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
                         Eindelijk een 2e living room. De plaatjes spreken voor zich, heel leuk om gezamenlijk tijdens een bouwproject, alles zo te krijgen hoe je het wilt dat het wordt.
@@ -703,7 +547,7 @@
                 </div>
             </div>
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
                         NOG INVULLLEN
@@ -714,7 +558,7 @@
                 </div>
             </div>
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Epe/epe.png" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Epe/epe.png" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
                         NOG INVULLLEN    
@@ -726,7 +570,7 @@
                 </div>
             </div>
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_1_tn.png" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_1_tn.png" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
                         NOG INVULLLEN    
@@ -739,10 +583,10 @@
             </div>
 
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Robin/Wasmachinehok.jpeg" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
-                        NOG INVULLLEN    
+                        Er wordt hard gewerkt en heel fijn dat er inhoudelijk wordt meegedacht over het bouwproject. We zijn ontzettend blij en tevreden met het tuinhuisje!   
                     </p>
                     <h5 class="mb-1">Robin</h5>
                     <span class="fst-italic">Tiny House Amsterdam</span>
@@ -751,10 +595,10 @@
                 </div>
             </div>
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_2_landing.png" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_2_landing.png" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
-                        NOG INVULLLEN    
+                        Maarten has worked with me on multiple projects over the last decade. He has a fantastic work ethic and is straight-forward in communication.    
                     </p>
                     <h5 class="mb-1">Lucinda</h5>
                     <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
@@ -763,7 +607,7 @@
                 </div>
             </div>
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/your_project.png" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/7_Rijswijk.PNG" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
                         NOG INVULLLEN    
@@ -775,7 +619,7 @@
                 </div>
             </div>
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs2/ijsselmuiden_2_minder_hoog_tn.png" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs2/ijsselmuiden_2_minder_hoog_tn.png" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
                         NOG INVULLLEN    
@@ -787,10 +631,11 @@
                 </div>
             </div>
             <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Apeldoorn/apedloorn WK.png" style="width: 210px; height: 130px;">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Apeldoorn/apedloorn WK.png" style="width: 310px; height: 200px;">
                 <div class="testimonial-text text-center p-4">
                     <p style="font-size:medium">
-                        NOG INVULLLEN    
+                        Maarten has worked with me on multiple projects over the last decade. He has a fantastic work ethic and is straight-forward in communication.    
+   
                     </p>
                     <h5 class="mb-1">Lucinda</h5>
                     <span class="fst-italic">Recreatiewoning Apeldoorn</span>
@@ -798,6 +643,90 @@
 
                 </div>
             </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/6_Maarn.PNG" style="width: 310px; height: 200px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        We felt really lucky to have found Maarten. Someone honest and trustworthy is so rare.
+                    </p>
+                    <h5 class="mb-1">Tijmen</h5>
+                    <span class="fst-italic">Recreatiewoning Maarn</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_9_vlonder.PNG" style="width: 310px; height: 200px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        I wanted to thank your for the great work that you did, the ladies said you were very respectful and tidy. I really appreciate that you were so well organised and made it all happen! Thank you! 
+                    </p>
+                    <h5 class="mb-1">Lizette</h5>
+                    <span class="fst-italic">Vlonder Amsterdam</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_2_mona.PNG" style="width: 310px; height: 200px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        
+Maarten levert goed en vakkundig werk voor een goede prijs! Ik vond het erg fijn dat hij allround is, dus zowel electra, stucwerk, tegelzetten, schilderen, timmer- als loodgieterswerk kan verrichten.
+                    </p>
+                    <h5 class="mb-1">Mona</h5>
+                    <span class="fst-italic">Volledige Verbouwing</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_7_stellaMaris.PNG" style="width: 310px; height: 200px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLEN
+                    </p>
+                    <h5 class="mb-1">Jaap & Ronnie</h5>
+                    <span class="fst-italic">Stella Maris Schilderwerk</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_14_bkMerelbeke.PNG" style="width: 310px; height: 200px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLEN                    </p>
+                    <h5 class="mb-1">Elisa & Zeger</h5>
+                    <span class="fst-italic">Badkamer Gent</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+            
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_13_shivani.PNG" style="width: 310px; height: 200px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        NOG INVULLEN
+                    </p>
+                    <h5 class="mb-1">Shivani</h5>
+                    <span class="fst-italic">Badkamer Amsterdam</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="testimonial-item text-center">
+                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_12_hekMona.PNG" style="width: 310px; height: 200px;">
+                <div class="testimonial-text text-center p-4">
+                    <p style="font-size:medium">
+                        Maarten is een harde werker die de gemaakte afspraken goed nakomt. Hij is vriendelijk, flexibel en denkt goed mee.
+                    </p>
+                    <h5 class="mb-1">Mona</h5>
+                    <span class="fst-italic">Hek + Boeiboord</span>
+                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -854,283 +783,61 @@
     </div>
     <!-- Contact End -->
 
-<!-- start services section -->
-<div class="container-xxl py-5" id="optionsLink">
-    <div class="container services">
-        <div class="section-title text-center">
-            <!-- <h1 class="display-5 mb-5">Options/Services</h1> -->
-        </div>
-        <h3 style="text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">a small selection of the available options</h3>
-        <br>
-        <div id="serviceText">
-        </div>
-
-        <!-- start of images -->
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/vaillant_tn.jpg" alt="">
+    <!-- Feature Start -->
+    <div class="container-xxl py-5" id="feature">
+        <div class="row">
+            <div class="col-6">
+                <div class="d-flex align-items-center">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                        <i class="fa fa-user-check fa-2x text-primary"></i>
                     </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h5 class="mb-3">Heat Pump</h5>
-                        <p>Variety of options available for Heating and Cooling<br><br></p>
-                        <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="ms-4">
+                        <h5 class="mb-0">Made to design</h5>
+                        <p class="mb-2">customized for you</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/solar-system-gd345e46e2_1920_tn.jpg" alt="">
+            <div class="col-6">
+                <div class="d-flex align-items-center">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                        <i class="fa fa-solid fa-seedling fa-2x text-primary"></i>
                     </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Solar Panels</h4>
-                        <p>Accept the sun's gift<br><br></p>
-                        <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/groendak_tn.png" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Green/Sedum Roof</h4>
-                        <p>Blend into nature<br><br></p>
-                        <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="ms-4">
+                        <h5 class="mb-0">Quality Materials</h5>
+                        <p class="mb-2">& sustainable building</p>
                     </div>
                 </div>
             </div>
-            <!-- row -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/buisjes_tn.png" alt="">
+            <div class="col-6">
+                <div class="d-flex align-items-center">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                        <i class="fa fa-drafting-compass fa-2x text-primary"></i>
                     </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Underfloor heating</h4>
-                        <p>Happy feet & higher efficiency</p>
-                        <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="ms-4">
+                        <h5 class="mb-0">Efficient team</h5>
+                        <p class="mb-2">with broad experience</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/isolatie_tn.jpg" alt="">
+            <div class="col-6">
+                <div class="d-flex align-items-center">
+                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                        <i class="fa fa-solid fa-toolbox fa-2x text-primary"></i>
                     </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Great Insulation</h4>
-                        <p>Adhering to New-Built norms or higher<br></p>
-                        <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/smart_home_stock_tn.jpg" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Smart Home/Domotics</h4>
-                        <p>Automate your home</p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="ms-4">
+                        <h5 class="mb-0">Full project handling</h5>
+                        <p class="mb-2">from design to delivery</p>
                     </div>
                 </div>
+                <br>
             </div>
-            <!-- row -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/carousel-1_tn.jpg" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Custom Carpentry</h4>
-                        <p>Wooden Furniture Manufacturing And Remodeling<br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/design_tn.png" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Design Consultancy</h4>
-                        <p>We can offer design input upon request<br><br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/gardening_tn.jpg" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Gardening Work</h4>
-                        <p>Change of plan(t)s<br><br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- row -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/schroefpalen.png" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Screw Pile Foundation</h4>
-                        <p>Efficient foundation technique suitable for difficult terrain<br><br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/vlonder.png" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Custom Decking</h4>
-                        <p>Relax or dine with guests on your private decking area, right next to your door (or sliding door)<br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/epdm2.png" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">EPDM Roof</h4>
-                        <p>modern rubber roof covering with long lifespan, suitable for low roof angles<br><br><br><br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-                    <!-- row -->
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/about page 1/dakgoot.PNG" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Zinc or Copper Gutter</h4>
-                                <p>Durable and stylish<br><br></p>
-                                <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/about page 1/schuifpui2_tn.png" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Sliding Door</h4>
-                                <p>and many other window/door frame options, made from sustainable treated wood or maintenance free plastic composite<br><br><br></p>
-                                <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src="img/about page 1/keuken_(2)_tn.jpg" alt="">
-                            </div>
-                            <div class="p-4 text-center border border-5 border-light border-top-0">
-                                <h4 class="mb-3">Custom Kitchen</h4>
-                                <p>Some options: cooking-island, integrated fume extraction, natural stone countertop, carousel corner cabinets and many other options<br><br>Kitchen made to your design and specifications<br><br></p>
-                                <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-            <!-- last row -->
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/eco_tn.jpg" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Eco-friendly materials</h4>
-                        <p>Insulation from old NewsPapers, Preserved wood, composite decking planks etc.</p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/gravel.jpg" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Landscaping</h4>
-                        <p>Driveways, retaining walls etc.<br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/about page 1/badkamer_tn.jpg" alt="">
-                    </div>
-                    <div class="p-4 text-center border border-5 border-light border-top-0">
-                        <h4 class="mb-3">Custom Bathroom</h4>
-                        <p>Some options: walk in shower with linear shower drain, rimless hanging toilet, bathroom furniture, custom lighting etc. <br><br></p>
-                        <a class="fw-medium" href="">Contact us<i class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-            <h3 style="text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">
-                And much, much more<br>
-            </h3>
-            <img style="margin-top:1vh;" id="clickMe" src="img/about page 1/clickMe.png" alt="">                
-            <br>
-            <h3 style="margin-left:10vw; margin-top:0.5vh; text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">
-                <a style = "text-decoration: none; color:white;" href="#contactLink"> contact us for more info </a>
-            </h3>
-            <br>
-            <h3 style="margin-left:20vw; margin-top:1.5vh;text-align: center; background-color: rgb(95, 122, 95); display:inline-block; color:white;padding-left: 1vw;padding-right:1vw;">
-                or download our <a id="brochure" href="">brochure</a>
-            </h3>
-            
-        </div>
-
         </div>
     </div>
 </div>
-                <!--
-                - naar eigen ontwerp (klant)
-                x (advies) meedenken bij ontwerp (op verzoek/indien gewenst)
-                x vloerverwarming
+</div>
+    </div> 
+    <!-- Feature end -->
 
-                x warmtepomp
-                x zonnepanelen
-                x groen/sedum dak
-                
-                x isolatie volgens nieuwbouw-norm (of beter)
-                x smart home/domotica installatie
-                x gebruik van verduurzaamd hout of alternatieven (bijvoorbeeld composiet vlonderplanken)
-
-                x installatiewerk: (los van algemeen installatiewerk) badkamers, keukens, andere installatiewerkzaamheden
-                x custom meubels
-                - extras (sauna ed.)
-
-                x hoveniers(tuiniers)werken
-                x verharding/aanrijdpad ed.
-                - etc. etc. (vraag naar de opties)
-
-             -->
-<!-- end services section -->
 
 
     <!-- Team Start -->
@@ -1292,6 +999,22 @@
     
     <!-- js for slideshow -->
     <script>
+
+            const links = document.querySelectorAll('.gridImg');
+            const parent = document.querySelector('#imageTextGrid');
+            
+            for(const link of links) {
+                const child = link.firstChild;
+
+                child.addEventListener('mouseover', function() {
+                    parent.classList.add('hovered');
+                });
+                child.addEventListener('mouseout', function() {
+                    parent.classList.remove('hovered');
+                })
+            }
+
+
         var myIndex = 0;
         carousel();
         
@@ -1306,6 +1029,8 @@
           x[myIndex-1].style.display = "block";  
           setTimeout(carousel, 6000); // Change image every 2 seconds
         }
+
+        
         </script>
 
 </body>
