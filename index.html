@@ -329,6 +329,61 @@
                 margin-left:5vw;
             }
 
+            /* responsive img grid styles */
+            * {
+            box-sizing: border-box;
+            }
+
+            body {
+            margin: 0;
+            font-family: Arial;
+            }
+
+            .header {
+            text-align: center;
+            padding: 32px;
+            }
+
+            .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+            }
+
+            /* Create four equal columns that sits next to each other */
+            .column {
+            -ms-flex: 33%; /* IE10 */
+            flex: 33%;
+            max-width: 33%;
+            padding: 0 4px;
+            }
+
+            .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+            }
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 800px) {
+            .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+            }
+
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+            .column {
+                -ms-flex: 100%;
+                flex: 100%;
+                max-width: 100%;
+            }
+            }
+
 </style>
 
 </head>
@@ -443,7 +498,7 @@
         <div class="row g-0 mx-lg-0">
             <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid w-100 h-100" src="img/about page 1/Epe/epe_lager.jpg" style="object-fit: cover;" alt="">
+                    <img class="position-absolute img-fluid w-100 h-100" src="img/about page 1/Ijs1/ijsselmuiden1_1.png" style="object-fit: cover;" alt="">
                 </div>
             </div>
             <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -451,11 +506,13 @@
                     <div class="section-title text-start">
                         <h1 class="display-5 mb-4">About Troos</h1>
                     </div>
-                    <p class="mb-4 pb-2">
+                    <p style="font-size:x-large; white-space: normal;letter-spacing:normal;line-height:normal;">
                         <b>Troos Bouw</b> is a construction company that specializes in high-quality, personalized <b>builds</b> of <b>Recreational, Off-Grid, and Tiny Homes.</b><br><br>
                         Our experienced team pays close attention to detail and works closely with clients to ensure their specific needs and requirements are met.<br><br>
                         We have expertise in building homes in remote and difficult terrains and prioritize using <b>top-quality materials for durability, longevity, sustainability and performance.</b> Troos Bouw is dedicated to providing a unique experience that exceeds expectations. <br><br>
+                        </h1>
                         <strong>Contact us to learn more about our services and start building your dream home.</strong>
+                    
                     </p>
                     <!-- <div class="row g-4 mb-4 pb-2">
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
@@ -479,6 +536,8 @@
                             </div>
                         </div>
                     </div> -->
+                    <a href="#imageTextGrid" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">View Projects &nbsp; <i class='fas fa-arrow-down'></i></a>
+                    <br><br>
                     <a href="#testimonialsLink" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">What clients say about us &nbsp; <i class='fas fa-arrow-down'></i></a>
 
                 </div>
@@ -488,7 +547,9 @@
 </div>
 <!-- About End -->
 
-    <!-- Service Start -->
+    
+
+    <!-- IMAGE GRID START -->
     <div id="imageTextGrid" name="overview" class="slideInRight">
         <br><br>
         <h1 class="projectTitle">Projects</h1>
@@ -519,6 +580,11 @@
         <h1 class="projectTitle" style="opacity:0.5;">And many, many more..</h1>
         <br><br>
 
+        <!-- image grid responsive -->
+        <div class="header">
+            <h1>Responsive Image Grid</h1>
+            <p>Resize the browser window to see the responsive effect.</p>
+            <!--  -->
 
         <!-- <div class="tile"><img class="thumbnailImg popupIjsselmuiden" src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder.png" /></div> -->
       </div>
