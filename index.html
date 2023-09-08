@@ -355,6 +355,11 @@
             }
             }
 
+            /* remove controls from video playback */
+            video::-webkit-media-controls-panel {
+                display: none !important;
+                opacity: 1 !important;}
+
            
 
 
@@ -466,9 +471,14 @@
    <div class="container about px-lg-0">
        <div class="row g-0 mx-lg-0">
            <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
-               <div class="position-relative h-100">
-                   <img class="position-absolute img-fluid w-100 h-100" src="img/about page 1/Ijs1/ijsselmuiden1_1.png" style="object-fit: cover;" alt="">
-               </div>
+               
+            <div class="position-relative h-100">
+                <video autoplay loop muted class="position-absolute img-fluid w-100 h-100">
+                    <source src="img/Maja39s Hideaway YouTube1080p60.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                   <!-- <img class="position-absolute img-fluid w-100 h-100" src="img/ page 1/Ijs1/ijsselmuiden1_1.png" style="object-fit: cover;" alt=""> -->
+               </div>about
            </div>
            <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s" >
                <div class="p-lg-5 pe-lg-0" style="width:100%;">
@@ -524,10 +534,10 @@
             
           <!-- <img class="thumbnailImg" src="img/about page 1/proj_thumnails/1_apeldoorn.PNG" /> -->
           <a href="digiBrochure.html#R1_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/1_apeldoorn.PNG" /></a>
-          <a href="digiBrochure.html#R4_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_ijsselmuiden_2.PNG" /></a>
-          <a href="digiBrochure.html#R2_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/3_ijsselmuiden_3.PNG" /></a>
           <a href="digiBrochure.html#R5_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/4_christiaan.PNG" /></a>
+          <a href="digiBrochure.html#R4_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/2_ijsselmuiden_2.PNG" /></a>
           <a href="digiBrochure.html#R3_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/5_hanne.PNG" /></a>
+          <a href="digiBrochure.html#R2_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/3_ijsselmuiden_3.PNG" /></a>
           <a href="digiBrochure.html#R6_1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/6_Maarn.PNG" /></a>
           <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/about page 1/proj_thumnails/7_Rijswijk.PNG" /></a>
           
