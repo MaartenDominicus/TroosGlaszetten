@@ -8,8 +8,8 @@
     <!-- rest of head -->
 
     <meta charset="utf-8">
-    <title>TroosBouw</title>
-    <link rel="icon" type="image/x-icon" href="img/about page 1/TROOS1.png">
+    <title>Troos Installatie &#129520</title>
+    <link rel="icon" type="image/x-icon" href="img/installatie/TI icon.png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -279,7 +279,7 @@
             .projectTitle{
                 text-align:left;
                 margin-left:5vw;
-            } */
+            } */       
 
             /* responsive img grid styles */
             .imageTextGrid * {
@@ -288,10 +288,11 @@
 
             .imageTextGrid {
             /* text-align: center;  */
+            padding-top:35px;
+            padding-bottom:35px;
             width: 100vw;
             margin: 0;
             margin-right: 0;
-            /* display: flex; */
             }
 
             .photos {
@@ -309,7 +310,7 @@
             display: block;
             float: left;
             flex: 0 0 auto;
-            padding: .35vw;
+            margin: .35vw;
             background-color: #fff;
             }
 
@@ -327,7 +328,7 @@
             
             @media screen and (min-width: 1801px) {
             .photos img {
-                width: 25%;
+                width: 24%;
             }
             .topText{
                 font-size:xx-large;
@@ -336,7 +337,7 @@
 
             @media screen and (min-width: 1025px)and (max-width: 1800px) {
             .photos img {
-                width: 33%;
+                width: 32%;
             }
             .topText{
                 font-size:x-large;
@@ -345,7 +346,7 @@
 
             @media screen and (min-width: 501px) and (max-width: 1024px) {
             .photos img {
-                width: 50%;
+                width: 48.5%;
             }
             .topText{
                 font-size:large;
@@ -460,6 +461,34 @@
             }
             }
 
+            .gridImg{
+                border: 5px solid red;   
+            }
+
+            .thumbnailImg{
+                border-radius:1.5%;
+            }
+
+            .infoBtnContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+
+            margin: 20px;
+        }
+
+        /* Style the button */
+        .infoBtn {
+            width: 20%;
+            background-color: rgb(145, 61, 61);
+            padding: 20px;
+            text-align: center;
+            color:white;
+            font-weight: normal;
+            font-size:xx-large
+        }
+
 </style>
 
 </head>
@@ -516,9 +545,9 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="#contactLink" style="margin-top:20px;" class="navbar-toggler me-4 navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <img src="img/about page 1/TROOS1.png" height=80vh;> 
-            <h2 class="m-0 text-primary companyName">&ensp; TROOS <span>Installation</span></h2>
+        <a href="#contactLink" style="margin-top:15px;margin-bottom:15px;" class="navbar-toggler me-4 navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/installatie/installatie zwart logo.png" height=80vh;> 
+            <h2 class="" style="color:black;opacity:1;">&ensp; TROOS <span style="color:rgb(102, 102, 102)">InstallatieTechniek</span></h2>
         </a>
 
 
@@ -540,9 +569,9 @@
 
             <div class="navbar-nav ms-auto p-4 p-lg-0" id="navBar">
                 <a href="#top" class="nav-item nav-link active">Home</a>
-                <a href="#projects" class="nav-item nav-link">Projects</a>
+                <a href="#projects" class="nav-item nav-link">Diensten</a>
                 <a href="#testimonialsLink" class="nav-item nav-link">Testimonials</a>
-                <a href="#contactLink" class="btn btn-primary animated slideInLeft" data-toggle="collapse" data-target="#navBar" style="justify-content: center; align-content:center; padding:auto;">Contact us<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="#contactLink" class="btn btn-primary animated slideInLeft" data-toggle="collapse" data-target="#navBar" style="justify-content: center; background-color: rgb(145, 61, 61); align-content:center; padding:auto;">Contact us<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
             
         </div>
@@ -563,17 +592,13 @@
 </div> -->
 
 <!-- About Start -->
-<div id="aboutLink"></div>
+<!-- <div id="aboutLink"></div>
 <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="about">
    <div class="container about px-lg-0">
        <div class="row g-0 mx-lg-0">
            <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                
             <div class="position-relative h-100">
-                <!-- <video autoplay loop muted class="position-absolute img-fluid w-100 h-100">
-                    <source src="img/Maja39s Hideaway YouTube1080p60.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video> -->
                    <img class="position-absolute img-fluid w-100 h-100" src="img/installatie/plumber2.png" style="object-fit: cover;" alt="">
                </div>
            </div>
@@ -591,34 +616,9 @@
 
                    <p style="font-size:x-large; white-space: normal;letter-spacing:normal;line-height:normal; text-justify: auto; width:100%;">
                        At <b>Troos Installation</b> we specialize in delivering top-notch solutions for all your electrical, plumbing, heating, and cooling needs.</b><br><br>
-                       <!-- Our experienced team pays close attention to detail and works closely with clients to ensure their specific needs and requirements are met.<br><br>
-                       We prioritize using <b>top-quality materials for durability, longevity, sustainability and performance.</b> Troos Bouw is dedicated to providing a unique experience that exceeds expectations. <br><br>
-                       </h1> -->
                        <strong>Contact us to learn more about our services or plan an appointment.</strong>
                    
                    </p>
-                   <!-- <div class="row g-4 mb-4 pb-2">
-                       <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                           <div class="d-flex align-items-center">
-                               <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                   <i class="fa fa-users fa-2x text-primary"></i>
-                               </div>
-                               <div class="ms-3">
-                                   <p class="fw-medium mb-0">Personalized approach</p>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                           <div class="d-flex align-items-center">
-                               <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                                   <i class="fa fa-check fa-2x text-primary"></i>
-                               </div>
-                               <div class="ms-3">
-                                   <p class="fw-medium mb-0">Timely completion </p>
-                               </div>
-                           </div>
-                       </div>
-                   </div> -->
                    <a href="#projects" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">View Projects &nbsp; <i class='fas fa-arrow-down'></i></a>
                    <br><br>
                    <a href="#testimonialsLink" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">What clients say about us &nbsp; <i class='fas fa-arrow-down'></i></a>
@@ -627,36 +627,42 @@
            </div>
        </div>
    </div>
-</div>
+</div> -->
 <!-- About End -->
+
+<!-- image full width auto height -->
+<img src="img/installatie/shreckneck_banner_for_plumbers_website_67bb2d3a-c408-427c-b960-2dfce2346b89.png" style="width:100vw;" alt="">
+
+<div class="infoBtnContainer" style="margin-top:5px;">
+    <div class="infoBtn">
+        <!-- <a href="#projects1" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="display:inline;">Meer info<i class="fa fa-arrow-right ms-3"></i></a> -->
+        <a href="#projects" class="centered-button" style="color:white">Meer informatie <i class="fa fa-arrow-right ms-3"></i></a>
+        <!-- two buttons next to each other in div-->
+
+
+    </div>
+</div>
+
 
   <div id="projects"></div>
         <span>
             <h1 style="padding-left:10px; padding-top:15px; color: rgb(85, 1, 1);">Our Services</h1>
         </span>
     <!-- IMAGE GRID START -->
-    <div class="imageTextGrid">
+    <div class="imageTextGrid" style="background-color: rgb(227, 227, 227);">
         <div class="photos">
             
           <!-- <img class="thumbnailImg" src="img/about page 1/proj_thumnails/1_apeldoorn.PNG" /> -->
           <!-- 1 plumbing -->
-          <a href="digiBrochure.html#R1_1" class="gridImg"><img class="thumbnailImg" src="img/installatie/groepenkast.png" /></a>
-          <a href="digiBrochure.html#R3_1" class="gridImg"><img class="thumbnailImg" src="img/installatie/ventilatie1.png" /></a>
-          <!-- 2 electrics -->
-          <a href="digiBrochure.html#R5_1" class="gridImg"><img class="thumbnailImg" src="img/installatie/pipes1.png" /></a>
-          <!-- 3 heating/cooling -->
-          <a href="digiBrochure.html#R4_1" class="gridImg"><img class="thumbnailImg" src="img/installatie/warmtepomp2.png" /></a>
-          <!-- 4 ventilation -->
-          
-          <!-- 5 bathrooms -->
-          <a href="digiBrochure.html#R2_1" class="gridImg"><img class="thumbnailImg" src="img/installatie/bk2.png" /></a>
-          <!-- 6 kitchens -->
-          <a href="digiBrochure.html#R6_1" class="gridImg"><img class="thumbnailImg" src="img/installatie/keuken1.png" /></a>
-          <!-- 7 EV charging pole -->
-          <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/installatie/laadpaal.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/groepenkast text test.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/loodgieten text test.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/klimaattechniek text test.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/ventilatie text test.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/bk text test.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/keuken text test.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/dakdekken text test.png" /></a>
+          <a href="" class="gridImg"><img class="thumbnailImg" src="img/installatie/laadpaal text test.png" /></a>
 
-          <!-- 8 something else -->
-            <a href="#1" class="gridImg"><img class="thumbnailImg" src="img/installatie/ontstopper3.png" /></a>
 
 
         </div>
@@ -891,7 +897,7 @@
 
     <!-- Contact Start -->
     <div id="contactLink"></div>
-<div style="background-color: #f7f7f7;">
+<div id="ContactForm" style="background-color: rgb(227, 227, 227);">
     <div class="section-title text-start">
         <h1 class="display-5 mb-4" style="padding-left:20px; padding-top:10px;"> How Can We Help You? </h1>
     </div>
@@ -920,7 +926,7 @@
             </div>
             <div class="col-12">
                 <!-- submit button -->
-                <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                <button class="btn btn-primary w-100 py-3" style="background-color: rgb(145, 61, 61);" type="submit">Submit</button>
             </div>
                 <input type="hidden" name="_next" value="https://troosbouw.com/thankyou.html">
                 <!-- fill in actual URL HERE -->
@@ -1071,7 +1077,7 @@
                     <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>operating throughout the Netherlands</p> -->
                     <!-- <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+31(0)610715893 (Maarten)</p> -->
                     <!-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>troosbouw@gmail.com</p> -->
-                    <a href="#contactLink" class="btn btn-primary py-4 px-lg-5 ">Contact us<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="#contactLink" class="btn btn-primary py-4 px-lg-5 " style="background-color: rgb(145, 61, 61);">Contact us<i class="fa fa-arrow-right ms-3"></i></a>
 
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
@@ -1081,14 +1087,41 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Custom</h4>
-                    <a class="btn btn-link" href="#projects">Tiny Homes</a>
-                    <a class="btn btn-link" href="#projects">Off-Grid</a>
-                    <a class="btn btn-link" href="#projects">Recreational Homes</a>
-                    <a class="btn btn-link" href="#projects">Garden Homes</a>
+                    <h4 class="text-light mb-4">Diensten</h4>
+                    <a class="btn btn-link" href="#projects">Loodgieter</a>
+                    <a class="btn btn-link" href="#projects">Electricien</a>
+                    <a class="btn btn-link" href="#projects">Verwarming (CV / warmtepomp)</a>
+                    <a class="btn btn-link" href="#projects">Airconditioning</a>
+                    <a class="btn btn-link" href="#projects">Ventilatie</a>
+                    <a class="btn btn-link" href="#projects">Domotica</a>
+                    <a class="btn btn-link" href="#projects">Quooker kraan</a>
+                    <a class="btn btn-link" href="#projects">Badkamers</a>
+                    <a class="btn btn-link" href="#projects">Keukens</a>
+                    <a class="btn btn-link" href="#projects">Dakdekker</a>
+                    <a class="btn btn-link" href="#projects">Ontwerp/Advies</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <img style="width:30%;" src="img/about page 1/TROOS1.png" > 
+                    <h4 class="text-light mb-4">Blog</h4>
+                    <h6 style="color:white; text-decoration: underline;">loodgieten:</h6>
+                    <a class="btn btn-link" href="#projects">Hoe oorzaak lekkage vinden?</a>
+                    <a class="btn btn-link" href="#projects">Waarom verstoppen afvoeren?</a>
+                    <a class="btn btn-link" href="#projects">Voordelen Quooker kraan</a>
+                    <a class="btn btn-link" href="#projects">Is mijn CV aan vervanging toe?</a>
+                    <h6 style="color:white; text-decoration: underline;">elektra:</h6>
+                    <a class="btn btn-link" href="#projects">Brand voorkomen door veilige installatie</a>
+                    <a class="btn btn-link" href="#projects">Kortsluiting? wat nu?</a>
+                    <a class="btn btn-link" href="#projects">Klik-aan-klik-uit voor en nadelen</a>
+                    <a class="btn btn-link" href="#projects">Waarom slaat aardlekschakelaar uit?</a>
+                    <h6 style="color:white; text-decoration: underline;">dakdekken:</h6>
+                    <a class="btn btn-link" href="#projects">EPDM vs bitumen dakbedekking</a>
+                    <a class="btn btn-link" href="#projects">Oorzaken daklekkage</a>
+                    <!-- <a class="btn btn-link" href="#projects">Badkamers</a> -->
+                    <!-- <a class="btn btn-link" href="#projects">Keukens</a> -->
+                    <!-- <a class="btn btn-link" href="#projects">Dakdekker</a> -->
+                    <!-- <a class="btn btn-link" href="#projects">Ontwerp/Advies</a> -->
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img style="height:30%;" src="img/installatie/logo w text.PNG" > 
                 </div>
 
                 <!-- <div class="col-lg-3 col-md-6">
@@ -1145,19 +1178,19 @@
     <!-- js for slideshow -->
     <script>
 
-            const links = document.querySelectorAll('.gridImg');
-            const parent = document.querySelector('.imageTextGrid');
+            // const links = document.querySelectorAll('.gridImg');
+            // const parent = document.querySelector('.imageTextGrid');
             
-            for(const link of links) {
-                const child = link.firstChild;
+            // for(const link of links) {
+            //     const child = link.firstChild;
 
-                child.addEventListener('mouseover', function() {
-                    parent.classList.add('hovered');
-                });
-                child.addEventListener('mouseout', function() {
-                    parent.classList.remove('hovered');
-                })
-            }
+            //     child.addEventListener('mouseover', function() {
+            //         parent.classList.add('hovered');
+            //     });
+            //     child.addEventListener('mouseout', function() {
+            //         parent.classList.remove('hovered');
+            //     })
+            // }
 
 
         var myIndex = 0;
