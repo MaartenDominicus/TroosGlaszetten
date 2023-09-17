@@ -333,6 +333,9 @@
             .topText{
                 font-size:xx-large;
             }
+            #bannerImg{
+                content: url("img/installatie/banner\ size\ A.png");
+            }
             }
 
             @media screen and (min-width: 1025px)and (max-width: 1800px) {
@@ -341,6 +344,9 @@
             }
             .topText{
                 font-size:x-large;
+            }
+            #bannerImg{
+                content: url("img/installatie/banner\ size\ B.png");
             }
             }
 
@@ -351,6 +357,9 @@
             .topText{
                 font-size:large;
             }
+            #bannerImg{
+                content: url("img/installatie/banner\ size\ C.png");
+            }
             }
 
             @media screen and (min-width: 50px) and (max-width: 500px) {
@@ -359,6 +368,9 @@
             }
             .topText{
                 font-size:medium;
+            }
+            #bannerImg{
+                content: url("img/installatie/banner\ size\ D.png");
             }
             }
 
@@ -544,10 +556,10 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="#contactLink" style="margin-top:15px;margin-bottom:15px;" class="navbar-toggler me-4 navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0" style="max-width:100%;">
+        <a href="#contactLink" style="margin-top:15px;margin-bottom:15px; " class="navbar-toggler me-4 navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="img/installatie/installatie zwart logo.png" height=80vh;> 
-            <h2 class="" style="color:black;opacity:1;">&ensp; TROOS <span style="color:rgb(102, 102, 102)">InstallatieTechniek</span></h2>
+            <h2 class="" style="color:black;opacity:1;">&ensp; TROOS <span style="color:rgb(102, 102, 102)">Installatie</span></h2>
         </a>
 
 
@@ -571,7 +583,10 @@
                 <a href="#top" class="nav-item nav-link active">Home</a>
                 <a href="#projects" class="nav-item nav-link">Diensten</a>
                 <a href="#testimonialsLink" class="nav-item nav-link">Testimonials</a>
-                <a href="#contactLink" class="btn btn-primary animated slideInLeft" data-toggle="collapse" data-target="#navBar" style="justify-content: center; background-color: rgb(145, 61, 61); align-content:center; padding:auto;">Contact us<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="#aboutLink" class="nav-item nav-link">Over Ons</a>
+                <a href="#contactLink" class="nav-item nav-link">Blog</a>
+
+                <a href="#contactLink" class="btn btn-primary animated slideInLeft" data-toggle="collapse" data-target="#navBar" style="justify-content: center; background-color: rgb(145, 61, 61); align-content:center; padding:auto;">Contact<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
             
         </div>
@@ -631,7 +646,7 @@
 <!-- About End -->
 
 <!-- image full width auto height -->
-<img src="img/installatie/shreckneck_banner_for_plumbers_website_67bb2d3a-c408-427c-b960-2dfce2346b89.png" style="width:100vw;" alt="">
+<img src="img/installatie/shreckneck_banner_for_plumbers_website_67bb2d3a-c408-427c-b960-2dfce2346b89.png" id="bannerImg" style="width:100vw;" alt="">
 
 <div class="infoBtnContainer" style="margin-top:5px;">
     <div class="infoBtn" style="min-width: 400px;">
