@@ -320,6 +320,185 @@
                 font-style: italic;
             }
             
+            /* whatsapp button */
+            .whatsapp-button {
+                position: fixed;
+                bottom: 100px;
+                right: 42.5px;
+                
+                /* background-color: rgba(0, 193, 71, 0.8); */
+                color: #fff;
+                text-decoration: none;
+                /* padding: 13px 15px; */
+                border-radius: 50%;
+                font-weight: bold;
+                opacity:0.6;
+                z-index: 1000; /* Adjust the z-index as needed */
+                animation: drop-down 2.5s ease;
+                transition: scale 0.5s ease-in-out, background-color 0.5s ease-in-out, bottom 0.5s ease-in-out;
+            }
+
+            .whatsapp-button:hover {
+                /* animation-play-state: reset; */
+                /* background-color: rgba(0, 193, 71, 1); */
+                scale:1.1;
+                opacity:.9;
+                /* bottom:110px; */
+                transition: scale 0.5s ease-in-out, background-color 0.5s ease-in-out, bottom 0.5s ease-in-out;
+                   
+            }
+
+            @keyframes drop-down {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+        scale:2;
+        background-color: rgba(0, 193, 71, 1);
+	}
+    
+    10% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+        scale:2;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+        scale:1;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+        scale:1.2;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0) ;
+        scale:1;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+        scale:1.2;
+        background-color: rgba(0, 193, 71, 1);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+        scale:1;
+        background-color: rgba(0, 193, 71, 1);
+
+    }
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+        scale:1.2;
+        background-color: rgba(0, 193, 71, 1);
+
+    }
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+        scale:1;
+        background-color: rgba(0, 193, 71, .8);
+
+    }
+}
+
+@keyframes drop-down-and-rotate {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px) rotate(-20deg);
+        scale:2;
+        background-color: rgba(0, 193, 71, 1);
+	}
+    
+    10% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px) rotate(-20deg);
+        scale:2;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0) rotate(20deg);
+        scale:1;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px) rotate(-20deg);
+        scale:1.2;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0) ;
+        scale:1;
+        background-color: rgba(0, 193, 71, 1);
+
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+        scale:1.2;
+        background-color: rgba(0, 193, 71, 1);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+        scale:1;
+        background-color: rgba(0, 193, 71, 1);
+
+    }
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+        scale:1.2;
+        background-color: rgba(0, 193, 71, 1);
+
+    }
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+        scale:1;
+        background-color: rgba(0, 193, 71, .8);
+
+    }
+}
+
+
             @media screen and (min-width: 1801px) {
             .photos img {
                 width: 25%;
@@ -422,6 +601,13 @@
             .topText{
                 font-size:large;
             }
+            .whatsapp-button {
+                content: url("img/WhatsAppButtonSmall.jpg");
+                width:13vw;
+                bottom:110px;
+                right:7vw;
+                animation: drop-down-and-rotate 2.5s ease;
+            }
             }
 
             @media screen and (min-width: 50px) and (max-width: 500px) {
@@ -430,6 +616,13 @@
             }
             .topText{
                 font-size:medium;
+            }
+            .whatsapp-button {
+                content: url("img/WhatsAppButtonSmall.jpg");
+                width:16vw;
+                bottom:110px;
+                right:7vw;
+                animation: drop-down-and-rotate 2.5s ease;
             }
             }
 
@@ -532,6 +725,7 @@
             }
             }
 
+            
 </style>
 
 </head>
@@ -1210,6 +1404,14 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- <a class="whatsapp-button" href="https://wa.me/31497229031?text=Goedendag,%20Ik%20heb%20eenvraag%20over%20jullie%20producten." target="_blank">
+        <i aria-hidden="true" class="fab fa-whatsapp fa-2x"></i>
+    </a> -->
+
+    <a class="whatsapp-button" aria-label="Chat on WhatsApp" href="https://wa.me/310610983085"> <img alt="Chat on WhatsApp" src="img/WhatsAppButtonGreenLarge.png" />
+    </a> 
+    
 
 
     <!-- JavaScript Libraries -->
