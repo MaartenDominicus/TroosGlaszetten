@@ -8,7 +8,7 @@
     <!-- rest of head -->
 
     <meta charset="utf-8">
-    <title>Troos Installatie Loodgieter Electricien Amsterdam &#129520</title>
+    <title>Troos Installatie Amsterdam | Loodgieter | Electricien &#129520</title>
     <link rel="icon" type="image/x-icon" href="img/installatie/TI icon.webp" alt="troos installatietechniek icon logo">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -61,17 +61,14 @@
 			align-items: center;
 			padding: 20px;
 		}
-
 		.left {
 			font-weight: bold;
 		}
-
 		.center {
 			text-align: center;
 			font-size: 24px;
 			font-weight: bold;
 		}
-
 		.right {
 			text-align: right;
 			font-weight: bold;
@@ -81,7 +78,6 @@
         .slideDiv{
             width: device-width;/* set width of slideshow to device's width */
         }
-
         .slideContainer{
             width:90%; /* 90% of parent(slideDiv) width = 90% of 'device-width' */
             position:relative;
@@ -111,7 +107,7 @@
             /* display:flex; */
         }
 
-        /* header social buttons*/
+        /* social buttons*/
         .btn-sm-square{
             background-color: white;
         }
@@ -333,6 +329,9 @@
             #bannerImg{
                 content: url("img/installatie/banner\ size\ B.webp");
             }
+            .installatieText{
+                display:none;
+            }
             }
 
             @media screen and (min-width: 501px) and (max-width: 1024px) {
@@ -347,11 +346,14 @@
             }
             .whatsapp-button {
                 content: url("img/WhatsAppButtonSmall.jpg");
-                width:13vw;
+                width:10vw;
                 bottom:110px;
                 right:7vw;
                 animation: drop-down-and-rotate 2.5s ease;
             }
+            /* .installatieText{
+                display:none;
+            } */
             }
 
             @media screen and (min-width: 50px) and (max-width: 500px) {
@@ -366,10 +368,13 @@
             }
             .whatsapp-button {
                 content: url("img/WhatsAppButtonSmall.jpg");
-                width:16vw;
-                bottom:110px;
+                width:14vw;
+                bottom:125px;
                 right:7vw;
                 animation: drop-down-and-rotate 2.5s ease;
+            }
+            .installatieText{
+                display:none;
             }
             }
 
@@ -649,6 +654,31 @@
     }
 }
 
+/* progress bar styles */
+.header {
+  position: fixed;
+  top: 00;
+  z-index: 10000;
+  width: 100%;
+  background-color: rgba(0, 193, 71, .2);
+}
+
+.header h2 {
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: black;
+  width: 0%;
+}
+
 </style>
 
 </head>
@@ -700,18 +730,13 @@
         </div>
     </div>
     <!-- Topbar End -->
-    
-
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0" style="max-width:100%; background-color:rgba(251, 235, 11, 0.942);">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0" style="width:100vw; background-color:rgba(251, 235, 11, 0.942);">
         <a href="#contactLink" style="margin-top:15px;margin-bottom:15px; " class="navbar-toggler me-4 navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="img/installatie/installatie zwart logo geel.webp" alt="logo troos installatietechniek bedrijf" height=80vh;> 
-            <h2 class="" style="color:black;opacity:1;">&ensp; TROOS <span style="color:rgb(102, 102, 102)">Installatie</span></h2>
+            <h2  style="color:black;opacity:1;">&ensp; TROOS <span class="installatieText" style="color:rgb(102, 102, 102)">Installatie</span></h2>
         </a>
-
-
-        <!-- <div id="topBarText">Recreational Homes &emsp; &#215; &emsp; Off-Grid &emsp; &#215; &emsp; Tiny Homes</div> -->
 
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="justify-self:center; margin:auto;">
             <span class="navbar-toggler-icon"></span>
@@ -728,648 +753,559 @@
             </div>
 
             <div class="navbar-nav ms-auto p-4 p-lg-0" id="navBar">
-                <a href="#top" class="nav-item nav-link active">Home</a>
+                <!-- <a href="#top" class="nav-item nav-link active">Home</a> -->
                 <a href="#projects" class="nav-item nav-link">Diensten</a>
-                <a href="#testimonialsLink" class="nav-item nav-link">Testimonials</a>
+                <a href="#testimonialsLink" class="nav-item nav-link">Reviews</a>
                 <a href="#aboutLink" class="nav-item nav-link">Over Ons</a>
-                <a href="installatieblog.html" class="nav-item nav-link">Blog</a>
-                <a href="index.html" class="nav-item nav-link"><i class="fa-solid fa-house"></i> TroosBouw</a>
-
-
-                <a href="#contactLink" class="btn btn-primary animated slideInLeft" data-toggle="collapse" data-target="#navBar" style=" font-weight:bolder\; justify-content: center; background-color: black; align-content:center; padding:auto;">Contact<i class="fa fa-arrow-right ms-3"></i></a>
+                <!-- <a href="installatieblog.html" class="nav-item nav-link">Blog</a> -->
+                <a href="index.html" class="nav-item nav-link"> <!-- <i class="fa-solid fa-house"></i>  --> TroosBouw</a>
+                <a href="#contactLink" class="btn btn-primary animated slideInLeft" data-toggle="collapse" data-target="#navBar" style="font-weight:bolder; justify-content: center; background-color: black; align-content:center; padding:auto; display:inline-block; margin-right: 25px; ">Contact<i class="fa fa-arrow-right ms-3"></i></a>
+                   <!-- whatsapp button -->
+                <!-- <a class="" style="display:inline-block;" aria-label="Chat on WhatsApp" href="https://wa.me/310610983085" aria-hidden="true";> <img alt="Chat on WhatsApp" style="width:10vw;" src="img/WhatsAppButtonSmall.jpg" /></a> -->
             </div>
             
         </div>
     </nav>
     <!-- Navbar End -->
 
-    <!-- welcome bar start -->
 
-    <!-- welcome bar end -->
-
-  
-
-
-    
- 
-<!-- <div class="topText">
-    Bouw en AannemersBedrijf. Volledige renovaties - Recreatiewoningen, off-grid & tiny-houses - Installatiewerk
-</div> -->
-
-<!-- About Start -->
-<!-- <div id="aboutLink"></div>
-<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="about">
-   <div class="container about px-lg-0">
-       <div class="row g-0 mx-lg-0">
-           <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
-               
-            <div class="position-relative h-100">
-                   <img class="position-absolute img-fluid w-100 h-100" src="img/installatie/plumber2.png" style="object-fit: cover;" alt="">
-               </div>
-           </div>
-           <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s" >
-               <div class="p-lg-5 pe-lg-0" style="width:100%;">
-                   
-                    <div class="">
-                       <h1 class="" style="color:rgb(85, 1, 1);">
-                            <span>Plumbing,</span>
-                            <span> Electrics,</span>
-                            <span> Heating/Cooling</span>
-
-                        </h1>
-                    </div>
-
-                   <p style="font-size:x-large; white-space: normal;letter-spacing:normal;line-height:normal; text-justify: auto; width:100%;">
-                       At <b>Troos Installation</b> we specialize in delivering top-notch solutions for all your electrical, plumbing, heating, and cooling needs.</b><br><br>
-                       <strong>Contact us to learn more about our services or plan an appointment.</strong>
-                   
-                   </p>
-                   <a href="#projects" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">View Projects &nbsp; <i class='fas fa-arrow-down'></i></a>
-                   <br><br>
-                   <a href="#testimonialsLink" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft" style="color:black;font-size:1.5em; background-color:rgba(238, 238, 238, 0.705)">What clients say about us &nbsp; <i class='fas fa-arrow-down'></i></a>
-
-               </div>
-           </div>
-       </div>
-   </div>
-</div> -->
-<!-- About End -->
-
-<!-- image full width auto height -->
-<img src="img/installatie/shreckneck_banner_for_plumbers_website_67bb2d3a-c408-427c-b960-2dfce2346b89.webp" alt="vriendelijke loodgieter / electricien die bij een werkbank staat met uitleg van de aangeboden diensten; loodgieten, elektra, klimaattechniek en dakwerk." id="bannerImg" style="width:100vw;" alt="">
-
-<div class="infoBtnContainer" style="margin-top:5px;">
-    <div class="infoBtn" style="min-width: 400px; background-color:rgba(251, 235, 11, 0.942)">
-        <!-- <a href="#projects1" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="display:inline;">Meer info<i class="fa fa-arrow-right ms-3"></i></a> -->
-        <a href="#projects" class="centered-button" style="color:black;">Meer informatie <i class="fa fa-arrow-right ms-3"></i></a>
-        <!-- two buttons next to each other in div-->
-
-
+    <div class="header">
+        <!-- <h2>Scroll Indicator</h2> -->
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
     </div>
-</div>
-
-
-  <div id="projects"></div>
+    
+    <div class="content">
+    
+        <!-- image full width auto height -->
+        <img src="img/installatie/shreckneck_banner_for_plumbers_website_67bb2d3a-c408-427c-b960-2dfce2346b89.webp"
+            alt="vriendelijke loodgieter / electricien die bij een werkbank staat met uitleg van de aangeboden diensten; loodgieten, elektra, klimaattechniek en dakwerk."
+            id="bannerImg" style="width:100vw;" alt="">
+    
+        <div class="infoBtnContainer" style="margin-top:5px;">
+            <div class="infoBtn" style="min-width: 400px; background-color:rgba(251, 235, 11, 0.942)">
+                <!-- <a href="#projects1" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="display:inline;">Meer info<i class="fa fa-arrow-right ms-3"></i></a> -->
+                <a href="#projects" class="centered-button" style="color:black;">Meer informatie <i
+                        class="fa fa-arrow-right ms-3"></i></a>
+                <!-- two buttons next to each other in div-->
+            </div>
+        </div>
+    
+        <div id="projects"></div>
         <span>
             <h1 style="padding-left:10px; padding-top:15px; color: rgb(0, 0, 0);">Onze Diensten</h1>
         </span>
-    <!-- IMAGE GRID START -->
-    <div class="imageTextGrid" style="background-color: rgb(227, 227, 227);">
-        <div class="photos">
-            
-          <!-- <img class="thumbnailImg" src="img/about page 1/proj_thumnails/1_apeldoorn.PNG" /> -->
-          <!-- 1 plumbing -->
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="elektricien; groepenkast aanpassen, fout opsporen, stopcontact plaatsen, domotica etc." src="img/installatie/groepenkast text test.webp" /></a>
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="loodgieten; leidingwerk aanpassen, kraan vervangen, lekkage oplossen, sanitair (bijvoorbeeld nieuwe kranen) etc." src="img/installatie/loodgieten text test.webp" /></a>
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="verwarming en koeling; centrale verwarming, warmtepomp, Airconditioning etc." src="img/installatie/klimaattechniek text test.webp" /></a>
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="ventilatie; centrale afzuiging, vochtproblemen verhelpen, warmteterugwinning etc." src="img/installatie/ventilatie text test.webp" /></a>
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="badkamers; custom badkamers, inloop douche, japans toilet, sani broyeur etc." src="img/installatie/bk text test.webp" /></a>
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="keukens; nieuwe keuken, kook eiland, led verlichting, quooker kraan etc." src="img/installatie/keuken text test.webp" /></a>
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="dakdekken; EPDM rubber dakbedekking, bitumen, reparatie, dak isoleren, goot repareren of plaatsen etc." src="img/installatie/dakdekken text test.webp" /></a>
-          <a href="" class="gridImg"><img class="thumbnailImg" alt="laadpalen: installatie, onderhoud" src="img/installatie/laadpaal text test.webp" /></a>
-
-
-
+        <!-- IMAGE GRID START -->
+        <div class="imageTextGrid" style="background-color: rgb(227, 227, 227);">
+            <div class="photos">
+    
+                <!-- <img class="thumbnailImg" src="img/about page 1/proj_thumnails/1_apeldoorn.PNG" /> -->
+                <!-- 1 plumbing -->
+                <a href="" class="gridImg"><img class="thumbnailImg"
+                        alt="elektricien; groepenkast aanpassen, fout opsporen, stopcontact plaatsen, domotica etc."
+                        src="img/installatie/groepenkast text test.webp" /></a>
+                <a href="" class="gridImg"><img class="thumbnailImg"
+                        alt="loodgieten; leidingwerk aanpassen, kraan vervangen, lekkage oplossen, sanitair (bijvoorbeeld nieuwe kranen) etc."
+                        src="img/installatie/loodgieten text test.webp" /></a>
+                <a href="" class="gridImg"><img class="thumbnailImg"
+                        alt="verwarming en koeling; centrale verwarming, warmtepomp, Airconditioning etc."
+                        src="img/installatie/klimaattechniek text test.webp" /></a>
+                <a href="" class="gridImg"><img class="thumbnailImg"
+                        alt="ventilatie; centrale afzuiging, vochtproblemen verhelpen, warmteterugwinning etc."
+                        src="img/installatie/ventilatie text test.webp" /></a>
+                <a href="" class="gridImg"><img class="thumbnailImg"
+                        alt="badkamers; custom badkamers, inloop douche, japans toilet, sani broyeur etc."
+                        src="img/installatie/bk text test.webp" /></a>
+                <a href="" class="gridImg"><img class="thumbnailImg"
+                        alt="keukens; nieuwe keuken, kook eiland, led verlichting, quooker kraan etc."
+                        src="img/installatie/keuken text test.webp" /></a>
+                <a href="" class="gridImg"><img class="thumbnailImg"
+                        alt="dakdekken; EPDM rubber dakbedekking, bitumen, reparatie, dak isoleren, goot repareren of plaatsen etc."
+                        src="img/installatie/dakdekken text test.webp" /></a>
+                <a href="" class="gridImg"><img class="thumbnailImg" alt="laadpalen: installatie, onderhoud"
+                        src="img/installatie/laadpaal text test.webp" /></a>
+    
+    
+    
+            </div>
         </div>
-    </div>
-
-
-    <!-- Service End -->
-
-<!-- Testimonial Start -->
-<div id="testimonialsLink"></div>
-<div class="container-xxl py-5 wow fadeInUp" id="testimonials" data-wow-delay="0.1s">
-    <div class="container" style="font-size:smaller;">
-        <div class="section-title text-center">
-            <h1 class="display-5 mb-5">What Clients Say About Us</h1>
+    
+    
+        <!-- Service End -->
+    
+        <!-- Testimonial Start -->
+        <div id="testimonialsLink"></div>
+        <div class="container-xxl py-5 wow fadeInUp" id="testimonials" data-wow-delay="0.1s">
+            <div class="container" style="font-size:smaller;">
+                <div class="section-title text-center">
+                    <h1 class="display-5 mb-5">What Clients Say About Us</h1>
+                </div>
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            alt="tuinhuis tiny house met overdekte vlonder lounge area en waterterugwinning in amsterdam oost"
+                            src="img/about page 1/proj_thumnails/4_christiaan.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Eindelijk een 2e living room. De plaatjes spreken voor zich, heel leuk om gezamenlijk
+                                tijdens een bouwproject, alles zo te krijgen hoe je het wilt dat het wordt.
+                                En ja, nadat het klaar is, kan ik volmondig zeggen, het is gelukt! </p>
+                            <h4 class="mb-1">Christiaan</h4>
+                            <span class="fst-italic">
+                                <h5>Tuinhuis Amsterdam</h5>
+                            </span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                        </div>
+                    </div>
+    
+                    <!-- <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 310px; height: 200px;">
+                                <div class="testimonial-text text-center p-4">
+                                    <p style="font-size:medium">
+                                        NOG INVULLLEN
+                                    <h5 class="mb-1">Hanne</h5>
+                                    <span class="fst-italic">Tiny House Amsterdam</span>
+                                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                                </div>
+                            </div> -->
+    
+                    <!-- <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Epe/epe.png" style="width: 310px; height: 200px;">
+                                <div class="testimonial-text text-center p-4">
+                                    <p style="font-size:medium">
+                                        NOG INVULLLEN    
+                                    </p>
+                                    <h5 class="mb-1">Hans</h5>
+                                    <span class="fst-italic">Recreatiewoning Epe</span>
+                                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                                </div>
+                            </div> -->
+    
+                    <!-- <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_1_tn.png" style="width: 310px; height: 200px;">
+                                <div class="testimonial-text text-center p-4">
+                                    <p style="font-size:medium">
+                                        NOG INVULLLEN    
+                                    </p>
+                                    <h5 class="mb-1">Karline</h5>
+                                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
+                                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                                </div>
+                            </div> -->
+    
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Robin/Wasmachinehok.webp"
+                            alt="project amsterdam tiny house gastverblijf extra kamer zweeds rabat"
+                            style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Er wordt hard gewerkt en heel fijn dat er inhoudelijk wordt meegedacht over het bouwproject.
+                                We zijn ontzettend blij en tevreden met het tuinhuisje!
+                            </p>
+                            <h5 class="mb-1">Robin</h5>
+                            <span class="fst-italic">Tiny House Amsterdam</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/ijsselmuiden1_1.webp"
+                            alt="project ijsselmuiden zwolle recreatiewoning nieuwbouw warmtepomp schroefpalen"
+                            style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Troos has worked with me on multiple projects over the last decade. They have a fantastic
+                                work ethic and are straight-forward in communication.
+                            </p>
+                            <h5 class="mb-1">Lucinda</h5>
+                            <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            src="img/about page 1/proj_thumnails/7_Rijswijk.webp"
+                            alt="project rijswijk den haag tuinhuis schuur custom HPL" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Ze gebruiken goede materialen en komen met prima oplossingen om de constructie praktischer
+                                en onderhoudsarm te maken. Precies wat we wensten. Dank!
+                            </p>
+                            <h5 class="mb-1">Hans</h5>
+                            <span class="fst-italic">Tuinhuis</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                        </div>
+                    </div>
+    
+                    <!-- <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs2/ijsselmuiden_2_minder_hoog_tn.png" style="width: 310px; height: 200px;">
+                                <div class="testimonial-text text-center p-4">
+                                    <p style="font-size:medium">
+                                        NOG INVULLLEN    
+                                    </p>
+                                    <h5 class="mb-1">Mirjam & Cees</h5>
+                                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
+                                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                                </div>
+                            </div> -->
+    
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            alt="project apeldoorn maja's hideaway tiny house recreatiewoning in het bos met upcycled en recycled materialen"
+                            src="img/about page 1/proj_thumnails/1_apeldoorn.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Troos has worked with me on multiple projects over the last decade. They have a fantastic
+                                work ethic and are straight-forward in communication.
+    
+                            </p>
+                            <h5 class="mb-1">Lucinda</h5>
+                            <span class="fst-italic">Recreatiewoning Apeldoorn</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            alt="project maarn utrecht recreatiewoning volledige renovatie isolatie en schaaldelen"
+                            src="img/about page 1/proj_thumnails/6_Maarn.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                We felt really lucky to have found Troos. Someone honest and trustworthy is so rare.
+                            </p>
+                            <h5 class="mb-1">Tijmen</h5>
+                            <span class="fst-italic">Recreatiewoning Maarn</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+    
+                        </div>
+                    </div>
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project vlonder amsterdam bankirai dakterras"
+                            src="img/about page 1/proj_thumnails/2_9_vlonder.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                I wanted to thank your for the great work that you did, the ladies said you were very
+                                respectful and tidy. I really appreciate that you were so well organised and made it all
+                                happen! Thank you!
+                            </p>
+                            <h5 class="mb-1">Lizette</h5>
+                            <span class="fst-italic">Vlonder Amsterdam</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+    
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            alt="project amsterdam oost volledige verbouwing renovatie woonhuis inclusief badkamer, toilet, keuken"
+                            src="img/about page 1/proj_thumnails/2_2_mona.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+    
+                                Troos levert goed en vakkundig werk voor een goede prijs! Ik vond het erg fijn dat ze
+                                allround zijn, dus zowel electra, stucwerk, tegelzetten, schilderen, timmer- als
+                                loodgieterswerk kunnen verrichten.
+                            </p>
+                            <h5 class="mb-1">Mona</h5>
+                            <span class="fst-italic">Volledige Verbouwing</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+    
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            alt="project nijmegen boot binnenvaartschip schilderwerk renovatie"
+                            src="img/about page 1/proj_thumnails/2_7_stellaMaris.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Onze boot ziet er weer als nieuw uit na het schilderwerk! Erg tevreden met het geleverde
+                                werk.
+                            </p>
+                            <h5 class="mb-1">Jaap & Ronnie</h5>
+                            <span class="fst-italic">Stella Maris Schilderwerk</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+    
+                    <!-- <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_14_bkMerelbeke.PNG" style="width: 310px; height: 200px;">
+                                <div class="testimonial-text text-center p-4">
+                                    <p style="font-size:medium">
+                                        NOG INVULLEN                    </p>
+                                    <h5 class="mb-1">Elisa & Zeger</h5>
+                                    <span class="fst-italic">Badkamer Gent</span>
+                                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                                </div>
+                            </div> -->
+    
+                    <!--             
+                            <div class="testimonial-item text-center">
+                                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_13_shivani.PNG" style="width: 310px; height: 200px;">
+                                <div class="testimonial-text text-center p-4">
+                                    <p style="font-size:medium">
+                                        NOG INVULLEN
+                                    </p>
+                                    <h5 class="mb-1">Shivani</h5>
+                                    <span class="fst-italic">Badkamer Amsterdam</span>
+                                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                                </div>
+                            </div> -->
+    
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            alt="project amsterdam nieuw aluminium hek en boeiboord op balkon dakterras"
+                            src="img/about page 1/proj_thumnails/2_12_hekMona.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Harde werkers die de gemaakte afspraken goed nakomen. Vriendelijk, flexibel en er wordt goed
+                                meegedacht.
+                            </p>
+                            <h5 class="mb-1">Mona</h5>
+                            <span class="fst-italic">Hek + Boeiboord</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+    
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid bg-light p-2 mx-auto mb-3"
+                            alt="project amsterdam custom bed met kasten en lades in kinderkamer"
+                            src="img/about page 1/proj_thumnails/bed_size3.webp" style="width: 310px; height: 200px;">
+                        <div class="testimonial-text text-center p-4">
+                            <p style="font-size:medium">
+                                Troos heeft van een inimini washok een prachtige kinderkamer ontworpen en gebouwd. Ze denken
+                                mee, zijn flexibel en leveren vakwerk in een snelle tijd.
+                            </p>
+                            <h5 class="mb-1">Maria</h5>
+                            <span class="fst-italic">Custom Bed + kast</span>
+                            <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
         </div>
-        <div class="owl-carousel testimonial-carousel">
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="tuinhuis tiny house met overdekte vlonder lounge area en waterterugwinning in amsterdam oost" src="img/about page 1/proj_thumnails/4_christiaan.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Eindelijk een 2e living room. De plaatjes spreken voor zich, heel leuk om gezamenlijk tijdens een bouwproject, alles zo te krijgen hoe je het wilt dat het wordt.
-                        En ja, nadat het klaar is, kan ik volmondig zeggen, het is gelukt!                    </p>
-                    <h4 class="mb-1">Christiaan</h4>
-                    <span class="fst-italic"><h5>Tuinhuis Amsterdam</h5></span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+        <!-- Testimonial End -->
+    
+        <!-- Contact Start -->
+        <div id="contactLink"></div>
+        <div id="ContactForm" style="background-color: rgb(227, 227, 227);">
+            <div class="section-title text-start">
+                <h1 class="display-5 mb-4" style="padding-left:20px; padding-top:10px;"> How Can We Help You? </h1>
+            </div>
+    
+            <p class="mb-4 pb-2" style="padding-left:20px;"><b>Contact us</b>, lets talk Possibilities</p>
+            <div style="padding-left:20%">
+                <form style="width:60%;" action="https://formsubmit.co/e2a3109e56f2b784903eb6ae24352c31" method="POST">
+                    <div class="row g-3">
+                        <input type="hidden" name="_subject" value="message from ContactForm">
+    
+                        <div class="col-12 col-sm-6">
+                            <!-- name input -->
+                            <input type="text" name="name" required class="form-control border-0" placeholder="Your Name"
+                                style="height: 55px;">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <!-- email input -->
+                            <input type="email" name="email" required class="form-control border-0" placeholder="Your Email"
+                                style="height: 55px;">
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <!-- tel. no. input -->
+                            <input type="text" name="mobile" class="form-control border-0"
+                                placeholder="Your Mobile (optional)" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <!-- message input -->
+                            <textarea class="form-control border-0" name="message" placeholder="Your message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <!-- submit button -->
+                            <button class="btn btn-primary w-100 py-3" style="background-color: rgb(145, 61, 61);"
+                                type="submit">Submit</button>
+                        </div>
+                        <input type="hidden" name="_next" value="thankyou.html">
+                        <!-- fill in actual URL HERE -->
+                    </div>
+                </form>
+            </div>
+            <!-- Contact End -->
 
+            <!-- Footer Start -->
+            <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="container py-5">
+                    <div class="row g-5">
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="text-light mb-4">Contact <i class="fa-solid fa-handshake"></i></h4>
+                            <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>operating throughout the Netherlands</p> -->
+                            <!-- <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+31(0)610715893 (Maarten)</p> -->
+                            <!-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>troosbouw@gmail.com</p> -->
+                            <a href="#contactLink" class="btn btn-primary py-4 px-lg-5 "
+                                style="background-color: rgb(145, 61, 61); font-weight:bold;"><i class="fa fa-envelope"
+                                    aria-hidden="true"> </i> Contact us </i>
+                                <i class="fa fa-arrow-right ms-3"></i></a>
+    
+                            <div class="d-flex pt-2">
+                                Socials <br>
+                                <a class="btn btn-outline-light btn-social" title="instagram icon"
+                                    href="https://instagram.com/troosbouw?utm_source=qr&igshid=YzU1NGVlODEzOA%3D%3D"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-light btn-social" title="facebook icon"
+                                    href="https://www.facebook.com/people/Troos-Bouw/pfbid02mzgVYbe8DtqCVUW8Gu2NAk5bhdB7QAfE8g1fA43yLXcMGoFjUs2U2zWom1eVh2DUl/"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-social" title="pinterest icon"
+                                    href="https://nl.pinterest.com/troosbouw/"><i class="fab fa-pinterest"></i></a>
+                                <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="text-light mb-4">Diensten <i class="fa-solid fa-wrench"></i></h4>
+                            <a class="btn btn-link" href="#projects">Loodgieter</a>
+                            <a class="btn btn-link" href="#projects">Electricien</a>
+                            <a class="btn btn-link" href="#projects">Verwarming (CV / warmtepomp)</a>
+                            <a class="btn btn-link" href="#projects">Airconditioning</a>
+                            <a class="btn btn-link" href="#projects">Ventilatie</a>
+                            <a class="btn btn-link" href="#projects">Domotica</a>
+                            <a class="btn btn-link" href="#projects">Quooker kraan</a>
+                            <a class="btn btn-link" href="#projects">Badkamers</a>
+                            <a class="btn btn-link" href="#projects">Keukens</a>
+                            <a class="btn btn-link" href="#projects">Dakdekker</a>
+                            <a class="btn btn-link" href="#projects">Ontwerp/Advies</a>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="text-light mb-4">Blog <i class="fa-brands fa-blogger"></i></h4>
+    
+                            <h6 style="color:white; text-decoration: underline;"><span
+                                    style="text-decoration: underline;">Loodgieten<span> &#160 &#160<i
+                                            class="fa-solid fa-water"></i></h6>
+                            <a class="btn btn-link" href="#projects">Hoe oorzaak lekkage vinden?</a>
+                            <a class="btn btn-link" href="#projects">Waarom verstoppen afvoeren?</a>
+                            <a class="btn btn-link" href="#projects">Voordelen Quooker kraan</a>
+                            <a class="btn btn-link" href="#projects">Is mijn CV aan vervanging toe?</a>
+    
+                            <h6 style="color:white; text-decoration: underline;"><span
+                                    style="text-decoration: underline;">Elektra<span> &#160 &#160<i
+                                            class="fa-solid fa-bolt"></i></h6>
+                            <a class="btn btn-link" href="#projects">Brand voorkomen door veilige installatie</a>
+                            <a class="btn btn-link" href="#projects">Kortsluiting? wat nu?</a>
+                            <a class="btn btn-link" href="#projects">Klik-aan-klik-uit voor en nadelen</a>
+                            <a class="btn btn-link" href="#projects">Waarom slaat aardlekschakelaar uit?</a>
+    
+                            <h6 style="color:white; text-decoration: underline;"><span
+                                    style="text-decoration: underline;">Dakdekken<span> &#160 &#160<i
+                                            class="fa-solid fa-angle-up"></i></h6>
+                            <a class="btn btn-link" href="#projects">EPDM vs bitumen dakbedekking</a>
+                            <a class="btn btn-link" href="#projects">Oorzaken daklekkage</a>
+                            <!-- <a class="btn btn-link" href="#projects">Badkamers</a> -->
+                            <!-- <a class="btn btn-link" href="#projects">Keukens</a> -->
+                            <!-- <a class="btn btn-link" href="#projects">Dakdekker</a> -->
+                            <!-- <a class="btn btn-link" href="#projects">Ontwerp/Advies</a> -->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="text-light mb-4">OpeningsTijden <i class="fa fa-clock"></i></h4>
+                            <p>Maandag 9:00-18:00</p>
+                            <p>Dinsdag 9:00-18:00</p>
+                            <p>Woensdag 9:00-18:00</p>
+                            <p>Donderdag 9:00-18:00</p>
+                            <p>Vrijdag 9:00-18:00</p>
+                            <p>Maandag 9:00-18:00</p>
+                            <p>Zaterdag Gesloten behalve voor spoed</p>
+                            <p>Zondag Gesloten behalve voor spoed</p>
+                        </div>
+    
+                        <!-- <div class="col-lg-3 col-md-6">
+                                    <img style="height:30%;" src="img/installatie/logo w text.PNG" > 
+                                </div> -->
+    
+                        <a href="#contactLink"
+                            style="margin-top:15px;margin-bottom:15px; background-color:rgba(251, 235, 11, 0.942)"
+                            class="navbar-toggler me-4 navbar-brand d-flex align-items-center px-4 px-lg-5">
+                            <img src="img/installatie/installatie zwart logo geel.webp" alt="troos installatie logo icon"
+                                height=80vh;>
+                            <h2 class="" style="color:black;opacity:1;">&ensp; TROOS <span
+                                    style="color:rgb(102, 102, 102)">Installatie</span></h2>
+                        </a>
+    
+                        <!-- <div class="col-lg-3 col-md-6">
+                                    <h4 class="text-light mb-4">Newsletter</h4>
+                                    <p>Keep informed. 4 emails per year </p>
+                                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                                    </div>
+                                </div> -->
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                &copy; TroosBouw, All Right Reserved.
+                            </div>
+                            <div class="col-md-6 text-center text-md-end">
+                                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                                <a class="border-bottom" href="">Terms and conditions</a>
+                            </div>
+    
+                            <div style="opacity: .5;" class="col-md-6 text-center text-md-end">
+                                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                                <br><br>Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            </div>
+    
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- Footer End -->
+    </div> <!-- content end -->
+    
+    
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- whatsapp button -->
+        <a class="whatsapp-button" aria-label="Chat on WhatsApp" href="https://wa.me/310610983085" aria-hidden="true" ;>
+            <img alt="Chat on WhatsApp" src="img/WhatsAppButtonGreenLarge.png" />
+        </a>
+    
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    
+        <!-- js for slideshow -->
+        <script>
 
-            <!-- <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Hanne/hanne1.jpeg" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        NOG INVULLLEN
-                    <h5 class="mb-1">Hanne</h5>
-                    <span class="fst-italic">Tiny House Amsterdam</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
+                        // When the user scrolls the page, execute myFunction 
+                        window.onscroll = function() {myFunction()};
 
-                </div>
-            </div> -->
+                        function myFunction() {
+                        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        var scrolled = (winScroll / height) * 100;
+                        document.getElementById("myBar").style.transition = 'none';
+                        document.getElementById("myBar").style.width = scrolled + "%";
+                        }
 
-            <!-- <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Epe/epe.png" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Hans</h5>
-                    <span class="fst-italic">Recreatiewoning Epe</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div> -->
-
-            <!-- <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs1/ijsselmuiden1_1_tn.png" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Karline</h5>
-                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div> -->
-
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Robin/Wasmachinehok.webp" alt="project amsterdam tiny house gastverblijf extra kamer zweeds rabat" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Er wordt hard gewerkt en heel fijn dat er inhoudelijk wordt meegedacht over het bouwproject. We zijn ontzettend blij en tevreden met het tuinhuisje!   
-                    </p>
-                    <h5 class="mb-1">Robin</h5>
-                    <span class="fst-italic">Tiny House Amsterdam</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/ijsselmuiden1_1.webp" alt="project ijsselmuiden zwolle recreatiewoning nieuwbouw warmtepomp schroefpalen" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Troos has worked with me on multiple projects over the last decade. They have a fantastic work ethic and are straight-forward in communication.    
-                    </p>
-                    <h5 class="mb-1">Lucinda</h5>
-                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/7_Rijswijk.webp" alt="project rijswijk den haag tuinhuis schuur custom HPL" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Ze gebruiken goede materialen en komen met prima oplossingen om de constructie praktischer en onderhoudsarm te maken. Precies wat we wensten. Dank! 
-                    </p>
-                    <h5 class="mb-1">Hans</h5>
-                    <span class="fst-italic">Tuinhuis</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-
-            <!-- <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/Ijs2/ijsselmuiden_2_minder_hoog_tn.png" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        NOG INVULLLEN    
-                    </p>
-                    <h5 class="mb-1">Mirjam & Cees</h5>
-                    <span class="fst-italic">Recreatiewoning Ijsselmuiden</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div> -->
-
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project apeldoorn maja's hideaway tiny house recreatiewoning in het bos met upcycled en recycled materialen" src="img/about page 1/proj_thumnails/1_apeldoorn.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Troos has worked with me on multiple projects over the last decade. They have a fantastic work ethic and are straight-forward in communication.    
-   
-                    </p>
-                    <h5 class="mb-1">Lucinda</h5>
-                    <span class="fst-italic">Recreatiewoning Apeldoorn</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project maarn utrecht recreatiewoning volledige renovatie isolatie en schaaldelen" src="img/about page 1/proj_thumnails/6_Maarn.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        We felt really lucky to have found Troos. Someone honest and trustworthy is so rare.
-                    </p>
-                    <h5 class="mb-1">Tijmen</h5>
-                    <span class="fst-italic">Recreatiewoning Maarn</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project vlonder amsterdam bankirai dakterras" src="img/about page 1/proj_thumnails/2_9_vlonder.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        I wanted to thank your for the great work that you did, the ladies said you were very respectful and tidy. I really appreciate that you were so well organised and made it all happen! Thank you! 
-                    </p>
-                    <h5 class="mb-1">Lizette</h5>
-                    <span class="fst-italic">Vlonder Amsterdam</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project amsterdam oost volledige verbouwing renovatie woonhuis inclusief badkamer, toilet, keuken" src="img/about page 1/proj_thumnails/2_2_mona.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
                         
-                        Troos levert goed en vakkundig werk voor een goede prijs! Ik vond het erg fijn dat ze allround zijn, dus zowel electra, stucwerk, tegelzetten, schilderen, timmer- als loodgieterswerk kunnen verrichten.
-                    </p>
-                    <h5 class="mb-1">Mona</h5>
-                    <span class="fst-italic">Volledige Verbouwing</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project nijmegen boot binnenvaartschip schilderwerk renovatie" src="img/about page 1/proj_thumnails/2_7_stellaMaris.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Onze boot ziet er weer als nieuw uit na het schilderwerk! Erg tevreden met het geleverde werk.
-                    </p>
-                    <h5 class="mb-1">Jaap & Ronnie</h5>
-                    <span class="fst-italic">Stella Maris Schilderwerk</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                </div>
-            </div>
-
-            <!-- <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_14_bkMerelbeke.PNG" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        NOG INVULLEN                    </p>
-                    <h5 class="mb-1">Elisa & Zeger</h5>
-                    <span class="fst-italic">Badkamer Gent</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                </div>
-            </div> -->
-            
-<!--             
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/about page 1/proj_thumnails/2_13_shivani.PNG" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        NOG INVULLEN
-                    </p>
-                    <h5 class="mb-1">Shivani</h5>
-                    <span class="fst-italic">Badkamer Amsterdam</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                </div>
-            </div> -->
-
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project amsterdam nieuw aluminium hek en boeiboord op balkon dakterras" src="img/about page 1/proj_thumnails/2_12_hekMona.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Harde werkers die de gemaakte afspraken goed nakomen. Vriendelijk, flexibel en er wordt goed meegedacht.
-                    </p>
-                    <h5 class="mb-1">Mona</h5>
-                    <span class="fst-italic">Hek + Boeiboord</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                </div>
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="img-fluid bg-light p-2 mx-auto mb-3" alt="project amsterdam custom bed met kasten en lades in kinderkamer" src="img/about page 1/proj_thumnails/bed_size3.webp" style="width: 310px; height: 200px;">
-                <div class="testimonial-text text-center p-4">
-                    <p style="font-size:medium">
-                        Troos heeft van een inimini washok een prachtige kinderkamer ontworpen en gebouwd. Ze denken mee, zijn flexibel en leveren vakwerk in een snelle tijd.
-                    </p>
-                    <h5 class="mb-1">Maria</h5>
-                    <span class="fst-italic">Custom Bed + kast</span>
-                    <br><a class="fw-medium" href="testimonial">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- Testimonial End -->
-
-    <!-- Contact Start -->
-    <div id="contactLink"></div>
-<div id="ContactForm" style="background-color: rgb(227, 227, 227);">
-    <div class="section-title text-start">
-        <h1 class="display-5 mb-4" style="padding-left:20px; padding-top:10px;"> How Can We Help You? </h1>
-    </div>
-    
-    <p class="mb-4 pb-2" style="padding-left:20px;"><b>Contact us</b>, lets talk Possibilities</p>
-<div style="padding-left:20%">    
-    <form style="width:60%;" action="https://formsubmit.co/e2a3109e56f2b784903eb6ae24352c31" method="POST">
-        <div class="row g-3">
-            <input type="hidden" name="_subject" value="message from ContactForm">
-            
-            <div class="col-12 col-sm-6">
-                <!-- name input -->
-                <input type="text" name="name" required class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-            </div>
-            <div class="col-12 col-sm-6">
-                <!-- email input -->
-                <input type="email" name="email" required class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-            </div>
-            <div class="col-12 col-sm-6">
-                <!-- tel. no. input -->
-                <input type="text"  name="mobile" class="form-control border-0" placeholder="Your Mobile (optional)" style="height: 55px;">
-            </div>
-            <div class="col-12">
-                <!-- message input -->
-                <textarea class="form-control border-0" name="message" placeholder="Your message"></textarea>
-            </div>
-            <div class="col-12">
-                <!-- submit button -->
-                <button class="btn btn-primary w-100 py-3" style="background-color: rgb(145, 61, 61);" type="submit">Submit</button>
-            </div>
-                <input type="hidden" name="_next" value="thankyou.html">
-                <!-- fill in actual URL HERE -->
-        </div>
-    </form>
-</div>
-    <!-- Contact End -->
-
-    <!-- Feature Start -->
-    <!-- <div class="container-xxl py-5" id="feature">
-        <div class="row">
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-user-check fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Made to design</h5>
-                        <p class="mb-2">customized for you</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-solid fa-seedling fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Quality Materials</h5>
-                        <p class="mb-2">& sustainable building</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-drafting-compass fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Efficient team</h5>
-                        <p class="mb-2">with broad experience</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
-                        <i class="fa fa-solid fa-toolbox fa-2x text-primary"></i>
-                    </div>
-                    <div class="ms-4">
-                        <h5 class="mb-0">Full project handling</h5>
-                        <p class="mb-2">from design to delivery</p>
-                    </div>
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-    </div>  -->
-    <!-- Feature end -->
-
-
-
-    <!-- Team Start -->
-    <!-- <div class="container-xxl py-5">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Team Members</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="https://ih1.redbubble.net/image.545342841.2376/flat,1000x1000,075,f.u2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">schroink</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="https:img-9gag-fun.9cache.com/photo/aOYempN_460swp.webp" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">old man</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="https://clasebcn.com/wp-content/uploads/2020/04/harold-thumb.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">AAAAAAAAAAA</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden position-relative">
-                            <img class="img-fluid" src="https://tr.rbxcdn.com/e9afb6b3bb707d214b0cc2ccbfad4f2e/420/420/Image/Png" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center border border-5 border-light border-top-0 p-4">
-                            <h5 class="mb-0">KYS N*gga  </h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Team End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Contact <i class="fa-solid fa-handshake"></i></h4>
-                    <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>operating throughout the Netherlands</p> -->
-                    <!-- <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+31(0)610715893 (Maarten)</p> -->
-                    <!-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>troosbouw@gmail.com</p> -->
-                    <a href="#contactLink" class="btn btn-primary py-4 px-lg-5 " style="background-color: rgb(145, 61, 61); font-weight:bold;"><i class="fa fa-envelope" aria-hidden="true"> </i> Contact us </i>
-                        <i class="fa fa-arrow-right ms-3"></i></a>
-
-                    <div class="d-flex pt-2">
-                        Socials <br>
-                        <a class="btn btn-outline-light btn-social" href="https://instagram.com/troosbouw?utm_source=qr&igshid=YzU1NGVlODEzOA%3D%3D"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/people/Troos-Bouw/pfbid02mzgVYbe8DtqCVUW8Gu2NAk5bhdB7QAfE8g1fA43yLXcMGoFjUs2U2zWom1eVh2DUl/"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://nl.pinterest.com/troosbouw/"><i class="fab fa-pinterest"></i></a>
-                        <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Diensten <i class="fa-solid fa-wrench"></i></h4>
-                    <a class="btn btn-link" href="#projects">Loodgieter</a>
-                    <a class="btn btn-link" href="#projects">Electricien</a>
-                    <a class="btn btn-link" href="#projects">Verwarming (CV / warmtepomp)</a>
-                    <a class="btn btn-link" href="#projects">Airconditioning</a>
-                    <a class="btn btn-link" href="#projects">Ventilatie</a>
-                    <a class="btn btn-link" href="#projects">Domotica</a>
-                    <a class="btn btn-link" href="#projects">Quooker kraan</a>
-                    <a class="btn btn-link" href="#projects">Badkamers</a>
-                    <a class="btn btn-link" href="#projects">Keukens</a>
-                    <a class="btn btn-link" href="#projects">Dakdekker</a>
-                    <a class="btn btn-link" href="#projects">Ontwerp/Advies</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Blog <i class="fa-brands fa-blogger"></i></h4>
-
-                    <h6 style="color:white; text-decoration: underline;"><span style="text-decoration: underline;">Loodgieten<span> &#160 &#160<i class="fa-solid fa-water"></i></h6>
-                    <a class="btn btn-link" href="#projects">Hoe oorzaak lekkage vinden?</a>
-                    <a class="btn btn-link" href="#projects">Waarom verstoppen afvoeren?</a>
-                    <a class="btn btn-link" href="#projects">Voordelen Quooker kraan</a>
-                    <a class="btn btn-link" href="#projects">Is mijn CV aan vervanging toe?</a>
-                    
-                    <h6 style="color:white; text-decoration: underline;"><span style="text-decoration: underline;">Elektra<span> &#160 &#160<i class="fa-solid fa-bolt"></i></h6>
-                    <a class="btn btn-link" href="#projects">Brand voorkomen door veilige installatie</a>
-                    <a class="btn btn-link" href="#projects">Kortsluiting? wat nu?</a>
-                    <a class="btn btn-link" href="#projects">Klik-aan-klik-uit voor en nadelen</a>
-                    <a class="btn btn-link" href="#projects">Waarom slaat aardlekschakelaar uit?</a>
-                    
-                    <h6 style="color:white; text-decoration: underline;"><span style="text-decoration: underline;">Dakdekken<span> &#160 &#160<i class="fa-solid fa-angle-up"></i></h6>
-                    <a class="btn btn-link" href="#projects">EPDM vs bitumen dakbedekking</a>
-                    <a class="btn btn-link" href="#projects">Oorzaken daklekkage</a>
-                    <!-- <a class="btn btn-link" href="#projects">Badkamers</a> -->
-                    <!-- <a class="btn btn-link" href="#projects">Keukens</a> -->
-                    <!-- <a class="btn btn-link" href="#projects">Dakdekker</a> -->
-                    <!-- <a class="btn btn-link" href="#projects">Ontwerp/Advies</a> -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">OpeningsTijden <i class="fa fa-clock"></i></h4>
-                    <p>Maandag 9:00-18:00</p>
-                    <p>Dinsdag 9:00-18:00</p>
-                    <p>Woensdag 9:00-18:00</p>
-                    <p>Donderdag 9:00-18:00</p>
-                    <p>Vrijdag 9:00-18:00</p>
-                    <p>Maandag 9:00-18:00</p>
-                    <p>Zaterdag Gesloten behalve voor spoed</p>
-                    <p>Zondag Gesloten behalve voor spoed</p>
-                </div>
-
-                <!-- <div class="col-lg-3 col-md-6">
-                    <img style="height:30%;" src="img/installatie/logo w text.PNG" > 
-                </div> -->
-                
-                <a href="#contactLink" style="margin-top:15px;margin-bottom:15px; background-color:rgba(251, 235, 11, 0.942)" class="navbar-toggler me-4 navbar-brand d-flex align-items-center px-4 px-lg-5">
-                    <img src="img/installatie/installatie zwart logo geel.webp" alt="troos installatie logo icon" height=80vh;> 
-                    <h2 class="" style="color:black;opacity:1;">&ensp; TROOS <span style="color:rgb(102, 102, 102)">Installatie</span></h2>
-                </a>
-
-                <!-- <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Keep informed. 4 emails per year </p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; TroosBouw, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                         <a class="border-bottom" href="">Terms and conditions</a>
-                    </div>
-                    
-                    <div style="opacity: .5;" class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <br><br>Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-    <!-- whatsapp button -->
-    <a class="whatsapp-button" aria-label="Chat on WhatsApp" href="https://wa.me/310610983085" aria-hidden="true";> <img alt="Chat on WhatsApp" src="img/WhatsAppButtonGreenLarge.png" />
-    </a> 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    
-    <!-- js for slideshow -->
-    <script>
 
             // const links = document.querySelectorAll('.gridImg');
             // const parent = document.querySelector('.imageTextGrid');
-            
+
             // for(const link of links) {
             //     const child = link.firstChild;
 
@@ -1382,24 +1318,25 @@
             // }
 
 
-        var myIndex = 0;
-        carousel();
-        
-        function carousel() {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-          }
-          myIndex++;
-          if (myIndex > x.length) {myIndex = 1}    
-          x[myIndex-1].style.display = "block";  
-          setTimeout(carousel, 6000); // Change image every 2 seconds
-        }
+            // var myIndex = 0;
+            // carousel();
 
-        
+            // function carousel() {
+            //     var i;
+            //     var x = document.getElementsByClassName("mySlides");
+            //     for (i = 0; i < x.length; i++) {
+            //         x[i].style.display = "none";
+            //     }
+            //     myIndex++;
+            //     if (myIndex > x.length) { myIndex = 1 }
+            //     x[myIndex - 1].style.display = "block";
+            //     setTimeout(carousel, 6000); // Change image every 2 seconds
+            // }
+
+
+
         </script>
-
-</body>
-
-</html>
+    
+        </body>
+    
+        </html>
