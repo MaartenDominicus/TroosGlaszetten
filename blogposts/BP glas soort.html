@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogpost - Inbraakbeveiliging: De Beste Bescherming voor Uw Woning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+        .title-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .title-bar img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .title-bar img:hover {
+            transform: scale(1.1);
+        }
+        .title-bar .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .title-bar .quick-links a:hover {
+            color: #ff9900;
+        }
+        .container {
+            display: flex;
+            margin-top: 80px; /* Increased space for the title bar */
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 1px solid #ddd;
+            position: sticky;
+            top: 20px; /* Offset from the top of the viewport */
+            animation: slideIn 1s ease-out;
+        }
+        h1, h2 {
+            color: #333;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        ol, ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ol li, ul li {
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        .suggestions a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+        .suggestions a:hover {
+            color: #004999;
+            text-decoration: underline;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .search-bar input[type="text"]:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        .social-media a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: #ff9900;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        footer:hover {
+            background-color: #444;
+        }
+        .faq {
+            margin-top: 20px;
+        }
+        .faq h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 0;
+            transition: color 0.3s ease;
+        }
+        .faq h3:hover {
+            color: #0066cc;
+        }
+        .faq dt {
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+            transition: color 0.3s ease;
+        }
+        .faq dt:hover {
+            color: #0066cc;
+        }
+        .faq dt::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .faq dd {
+            display: none;
+            margin: 0;
+            padding: 0 0 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq dd.show {
+            display: block;
+            opacity: 1;
+            max-height: 500px; /* Arbitrary large value to accommodate content */
+        }
+        .faq dt.active::after {
+            transform: rotate(180deg);
+        }
+        .keywords {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+        .keywords h3 {
+            margin-top: 0;
+        }
+        .faq-link {
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <img src="logo.png" alt="Logo">
+        <div class="quick-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Zoek...">
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+    
+    ```html
+    <div class="container">
+        <div class="content">
+            <h1 style="padding-top:15px;">Welk Soort Glas Moet ik Kiezen: Gehard, Gelamineerd of Anders?</h1>
+            <p>Het kiezen van het juiste type glas voor uw ramen hangt af van verschillende factoren, zoals veiligheid, isolatie, duurzaamheid en esthetiek. Hier zijn de belangrijkste soorten glas en hun toepassingen, zodat u een weloverwogen keuze kunt maken.</p>
+    
+            <h2>Gehard Glas</h2>
+            <p><strong>Voordelen:</strong></p>
+            <ul>
+                <li><strong>Sterkte:</strong> Gehard glas is tot vijf keer sterker dan gewoon glas, wat het bestand maakt tegen harde stoten en extreme temperaturen.</li>
+                <li><strong>Veiligheid:</strong> Bij breuk valt gehard glas in kleine, onscherpe stukjes uiteen, wat het risico op verwondingen vermindert.</li>
+                <li><strong>Toepassingen:</strong> Ideaal voor deuren, douches, ramen in hoogrisicogebieden, en meubels.</li>
+            </ul>
+            <p><strong>Nadelen:</strong></p>
+            <ul>
+                <li><strong>Aanpassingen:</strong> Gehard glas kan niet worden gesneden of bewerkt nadat het is gehard. Alle bewerkingen moeten vóór het hardingsproces plaatsvinden.</li>
+            </ul>
+    
+            <h2>Gelamineerd Glas</h2>
+            <p><strong>Voordelen:</strong></p>
+            <ul>
+                <li><strong>Veiligheid:</strong> Gelamineerd glas bestaat uit twee of meer glaslagen met een kunststof tussenlaag. Bij breuk blijven de glasscherven aan de tussenlaag kleven, waardoor het glas niet uiteenvalt.</li>
+                <li><strong>Geluidsisolatie:</strong> De kunststof tussenlaag helpt ook bij het dempen van geluid, wat zorgt voor een stillere omgeving.</li>
+                <li><strong>Inbraakwerendheid:</strong> Door de stevigheid is gelamineerd glas moeilijker te doorbreken, wat de inbraakbeveiliging verbetert.</li>
+                <li><strong>UV-bescherming:</strong> De tussenlaag kan helpen bij het filteren van schadelijke UV-stralen.</li>
+            </ul>
+            <p><strong>Nadelen:</strong></p>
+            <ul>
+                <li><strong>Kosten:</strong> Gelamineerd glas is meestal duurder dan standaard glas en gehard glas.</li>
+            </ul>
+    
+            <h2>Dubbelglas (HR++)</h2>
+            <p><strong>Voordelen:</strong></p>
+            <ul>
+                <li><strong>Isolatie:</strong> Biedt uitstekende thermische isolatie, waardoor warmteverlies wordt verminderd en energiekosten worden verlaagd.</li>
+                <li><strong>Condensatie:</strong> Vermindert de kans op condensatie aan de binnenkant van de ramen.</li>
+                <li><strong>Geluidsisolatie:</strong> Biedt ook betere geluidsisolatie dan enkel glas.</li>
+            </ul>
+            <p><strong>Nadelen:</strong></p>
+            <ul>
+                <li><strong>Kosten:</strong> Hogere initiële kosten in vergelijking met enkel glas, maar de besparingen op energiekosten kunnen dit compenseren.</li>
+            </ul>
+    
+            <h2>Triple Glas</h2>
+            <p><strong>Voordelen:</strong></p>
+            <ul>
+                <li><strong>Maximale Isolatie:</strong> Biedt de beste thermische en akoestische isolatie, ideaal voor energie-efficiënte woningen.</li>
+                <li><strong>Comfort:</strong> Houdt de temperatuur binnen constant, wat bijdraagt aan een comfortabel binnenklimaat.</li>
+            </ul>
+            <p><strong>Nadelen:</strong></p>
+            <ul>
+                <li><strong>Kosten:</strong> Hogere aanschafkosten, maar dit kan op de lange termijn worden terugverdiend door lagere energiekosten.</li>
+                <li><strong>Gewicht:</strong> Zwaarder dan dubbelglas, wat versterkte kozijnen kan vereisen.</li>
+            </ul>
+    
+            <h2>Andere Glasopties</h2>
+            <h3>Vacuümglas</h3>
+            <ul>
+                <li><strong>Voordelen:</strong> Uitstekende isolatie door het vacuüm tussen de glaslagen, dunner en lichter dan triple glas.</li>
+                <li><strong>Nadelen:</strong> Zeer hoge kosten.</li>
+            </ul>
+            <h3>Zelfreinigend Glas</h3>
+            <ul>
+                <li><strong>Voordelen:</strong> Speciaal gecoat glas dat vuil en water afstoot, waardoor het zichzelf reinigt onder invloed van regen en zonlicht.</li>
+                <li><strong>Nadelen:</strong> Hogere kosten en afhankelijkheid van natuurlijke elementen voor het reinigingsproces.</li>
+            </ul>
+            <h3>Getint Glas</h3>
+            <ul>
+                <li><strong>Voordelen:</strong> Vermindert verblinding en verhoogt privacy, biedt ook UV-bescherming.</li>
+                <li><strong>Nadelen:</strong> Kan de natuurlijke lichtinval verminderen.</li>
+            </ul>
+    
+            <h2>Conclusie</h2>
+            <p>De keuze voor het juiste glas hangt af van uw specifieke behoeften:</p>
+            <ul>
+                <li><strong>Veiligheid en inbraakwerendheid:</strong> Kies voor gehard of gelamineerd glas.</li>
+                <li><strong>Thermische isolatie:</strong> Dubbelglas (HR++) of triple glas zijn de beste opties.</li>
+                <li><strong>Geluidsisolatie:</strong> Gelamineerd glas of triple glas bieden uitstekende geluidsreductie.</li>
+                <li><strong>Speciale toepassingen:</strong> Vacuümglas voor maximale isolatie, zelfreinigend glas voor gemak, en getint glas voor privacy en UV-bescherming.</li>
+            </ul>
+            <p>Heeft u hulp nodig bij het kiezen van het juiste glas voor uw woning? Neem contact met ons op voor deskundig advies en een breed scala aan hoogwaardige glasoplossingen.</p>
+    
+            <div class="faq">
+                <h3>Veelgestelde Vragen (FAQ)</h3>
+                <dl>
+                    <dt class="faq-item">Wat is het verschil tussen gehard en gelamineerd glas?</dt>
+                    <dd class="faq-content">Gehard glas is sterker en valt in kleine stukjes uiteen bij breuk, terwijl gelamineerd glas scherven aan een tussenlaag laat kleven voor extra veiligheid en geluidsisolatie. <a href="#" class="faq-link">Meer informatie</a></dd>
+    
+                    <dt class="faq-item">Welk glas biedt de beste thermische isolatie?</dt>
+                    <dd class="faq-content">Triple glas biedt de beste thermische isolatie, gevolgd door dubbelglas (HR++). <a href="#" class="faq-link">Meer informatie</a></dd>
+    
+                    <dt class="faq-item">Is zelfreinigend glas echt onderhoudsvrij?</dt>
+                    <dd class="faq-content">Zelfreinigend glas heeft een speciale coating die helpt bij het afstoten van vuil en water, maar kan afhankelijk zijn van natuurlijke elementen zoals regen en zonlicht. <a href="#" class="faq-link">Meer informatie</a></dd>
+    
+                    <dt class="faq-item">Hoeveel kost vacuümglas in vergelijking met andere glasopties?</dt>
+                    <dd class="faq-content">Vacuümglas is duurder dan andere glasopties zoals dubbelglas en triple glas, maar biedt uitstekende isolatie. <a href="#" class="faq-link">Meer informatie</a></dd>
+    
+                    <dt class="faq-item">Wat zijn de voordelen van getint glas?</dt>
+                    <dd class="faq-content">Getint glas vermindert verblinding, verhoogt privacy en biedt UV-bescherming, maar kan de natuurlijke lichtinval verminderen. <a href="#" class="faq-link">Meer informatie</a></dd>
+                </dl>
+            </div>
+    
+            <div class="keywords">
+                <h3>Relevante Zoekwoorden</h3>
+                <p># Gehard glas voordelen # Gelamineerd glas veiligheid # Dubbelglas isolatie # Triple glas # Vacuümglas kosten # Zelfreinigend glas # Getint glas voordelen # Inbraakwerend glas # Geluidsisolatie glas # Thermische isolatie ramen</p>
+            </div>
+        </div>
+    
+        <div class="sidebar">
+            <h3>Suggesties voor Andere Artikelen</h3>
+            <ul class="suggestions">
+                <li><a href="#">Wat zijn de Voordelen van Dubbel Glas?</a></li>
+                <li><a href="#">Hoe Kies je het Beste Glas voor je Huis?</a></li>
+                <li><a href="#">Hoe Verloopt het Proces van Glasinstallatie?</a></li>
+                <li><a href="#">Hoeveel Kan ik Besparen met Energie-efficiënte Ramen?</a></li>
+                <li><a href="#">Hoe Wordt Historisch Glas Gerestaureerd?</a></li>
+                <li><a href
+    
+    ="#">Waarom is Professionele Glasinstallatie Belangrijk voor de Veiligheid?</a></li>
+            </ul>
+        </div>
+    </div>
+    ```
+    <footer>
+        <p>&copy; 2024 Uw Bedrijf. Alle rechten voorbehouden. <br> <a href="#">Privacybeleid</a> | <a href="#">Algemene Voorwaarden</a></p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq dt').forEach(dt => {
+            dt.addEventListener('click', () => {
+                const dd = dt.nextElementSibling;
+                const isActive = dt.classList.toggle('active');
+                dd.classList.toggle('show', isActive);
+            });
+        });
+    </script>
+</body>
+</html>

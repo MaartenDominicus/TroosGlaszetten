@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogpost - De Voordelen van Dubbel Glas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+        .title-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .title-bar:hover {
+            background-color: #444;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        .title-bar img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .title-bar img:hover {
+            transform: scale(1.1);
+        }
+        .title-bar .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .title-bar .quick-links a:hover {
+            color: #ff9900;
+        }
+        .container {
+            display: flex;
+            margin-top: 80px; /* Increased space for the title bar */
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 1px solid #ddd;
+            position: sticky;
+            top: 20px; /* Offset from the top of the viewport */
+            animation: slideIn 1s ease-out;
+        }
+        h1, h2 {
+            color: #333;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        ol, ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ol li, ul li {
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        /* achtergrond kleur van alineas veranderen wanneer "hover" */
+        /* ol li:hover, ul li:hover {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        } */
+        .suggestions a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+        .suggestions a:hover {
+            color: #004999;
+            text-decoration: underline;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .search-bar input[type="text"]:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        .social-media a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: #0066cc;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        footer:hover {
+            background-color: #444;
+        }
+        .faq {
+            margin-top: 20px;
+        }
+        .faq h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 0;
+            transition: color 0.3s ease;
+        }
+        .faq h3:hover {
+            color: #0066cc;
+        }
+        .faq dt {
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+            transition: color 0.3s ease;
+        }
+        .faq dt:hover {
+            color: #0066cc;
+        }
+        .faq dt::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .faq dd {
+            display: none;
+            margin: 0;
+            padding: 0 0 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq dd.show {
+            display: block;
+            opacity: 1;
+            max-height: 500px; /* Arbitrary large value to accommodate content */
+        }
+        .faq dt.active::after {
+            transform: rotate(180deg);
+        }
+        .keywords {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+        .keywords h3 {
+            margin-top: 0;
+        }
+        .faq-link {
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <img src="logo.png" alt="Logo">
+        <div class="quick-links">
+            <a href="#">Home</a>
+            <a href="#">Over Ons</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Zoek...">
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            <h1 style="padding-top:15px;">De Voordelen van Dubbel Glas en Waarom Professionele Installatie Belangrijk Is</h1>
+            <p>Wanneer het gaat om het verbeteren van je huis, spelen ramen een cruciale rol. Niet alleen dragen ze bij aan de esthetiek van je woning, maar ze hebben ook een significante invloed op de energie-efficiëntie, veiligheid en het comfort. In deze blogpost bespreken we de voordelen van dubbel glas, hoe je het beste glas voor je huis kiest, het proces van glasinstallatie en waarom het essentieel is om dit door professionals te laten doen.</p>
+            
+            <h2>De Voordelen van Dubbel Glas</h2>
+            <ol>
+                <li><strong>Verbeterde Energie-efficiëntie:</strong> Dubbel glas bestaat uit twee glaslagen met een ruimte ertussen die is gevuld met lucht of een inert gas zoals argon. Deze constructie zorgt voor een uitstekende isolatie, waardoor warmteverlies in de winter en warmtewinst in de zomer aanzienlijk wordt verminderd. Dit leidt tot lagere energiekosten omdat je minder hoeft te verwarmen of te koelen.</li>
+                <li><strong>Geluidsisolatie:</strong> Een ander groot voordeel van dubbel glas is de geluidsisolatie. Wonen in een drukke straat of dicht bij een lawaaierige omgeving kan stressvol zijn. Dubbel glas helpt om het geluid van buitenaf te dempen, wat zorgt voor een rustiger en comfortabeler binnenklimaat.</li>
+                <li><strong>Veiligheid en Inbraakpreventie:</strong> Gelaagd glas biedt extra bescherming tegen inbraak. Het bestaat uit meerdere glaslagen met een kunststof tussenlaag, wat het extreem sterk maakt en moeilijker te breken. Dit ontmoedigt inbrekers en vermindert het risico op glasscherven bij een ongeluk.</li>
+                <li><strong>Verminderde Condensatie:</strong> Condensatie kan een groot probleem zijn, vooral in de koudere maanden. Dubbel glas vermindert de kans op condensvorming aan de binnenkant van je ramen, wat helpt om schimmel en vochtproblemen te voorkomen.</li>
+                <li><strong>Milieuvoordelen en Kostenbesparing:</strong> Door te kiezen voor dubbel glas draag je bij aan een beter milieu. De verminderde energiebehoefte leidt tot een lagere CO2-uitstoot, wat goed is voor het milieu. Bovendien bespaar je aanzienlijk op je energierekeningen. Stel je eens voor hoeveel geld je kunt besparen op stookkosten door gewoon te investeren in betere ramen! Niet alleen bescherm je de planeet, maar je portemonnee zal je ook dankbaar zijn.</li>
+            </ol>
+            
+            <h2>Opties voor Speciaal Glas</h2>
+            <p>Naast standaard dubbel glas zijn er ook verschillende soorten speciaal glas beschikbaar die extra voordelen bieden:</p>
+            <ul>
+                <li><strong>Brandwerend Glas:</strong> Dit glas is ontworpen om de verspreiding van vuur tegen te gaan, waardoor je huis veiliger wordt in geval van brand.</li>
+                <li><strong>Zonwerend Glas:</strong> Zonwerend glas helpt de hoeveelheid zonlicht en warmte die je huis binnenkomt te verminderen, wat het binnenklimaat aangenamer maakt en de behoefte aan airconditioning vermindert.</li>
+                <li><strong>Gelaagd Glas/Doorvalbeveiliging:</strong> Gelaagd glas bestaat uit meerdere glaslagen met een kunststof tussenlaag, wat het extreem sterk maakt. Dit biedt extra veiligheid doordat het doorvalbeveiliging biedt en het risico op letsel bij breuk vermindert.</li>
+            </ul>
+            
+            <h2>Hoe Kies je het Beste Glas voor je Huis?</h2>
+            <p>Bij het kiezen van het juiste glas voor je huis moet je rekening houden met verschillende factoren:</p>
+            <ul>
+                <li><strong>Isolatiewaarde:</strong> Kijk naar de U-waarde van het glas. Hoe lager de U-waarde, hoe beter de isolatie.</li>
+                <li><strong>Geluidsisolatie:</strong> Overweeg akoestisch glas als je in een lawaaierige omgeving woont.</li>
+                <li><strong>Veiligheid:</strong> Gehard, gelamineerd of brandwerend glas biedt extra veiligheid.</li>
+                <li><strong>Esthetiek:</strong> Zorg ervoor dat het glas past bij de stijl van je huis en voldoet aan eventuele esthetische voorkeuren of voorschriften.</li>
+            </ul>
+            
+            <h2>Het Proces van Glasinstallatie</h2>
+            <ol>
+                <li><strong>Inspectie en Opmeting:</strong> Een professional zal je huidige ramen inspecteren en nauwkeurige metingen verrichten om ervoor te zorgen dat het nieuwe glas perfect past.</li>
+                <li><strong>Verwijdering van Oud Glas:</strong> Het oude glas wordt voorzichtig verwijderd, waarbij schade aan de omliggende structuur wordt vermeden.</li>
+                <li><strong>Voorbereiding van de Kozijnen:</strong> De kozijnen worden schoongemaakt en indien nodig gerepareerd om een goede pasvorm te garanderen.</li>
+                <li><strong>Installatie van Nieuw Glas:</strong> Het nieuwe glas wordt geplaatst en stevig verankerd in het kozijn.</li>
+                <li><strong>Afwerking:</strong> De randen worden afgewerkt met kit of andere afdichtingsmaterialen om lucht- en waterlekkage te voorkomen.</li>
+            </ol>
+            
+            <p>Als uw kozijnen renovatie vereisen of aan vervanging toe zijn, kunnen wij u hier uiteraard ook bij helpen. Ook voor de installatie van extra kozijnen, lichtstraten en andere aanpassingen staan wij voor u klaar.</p>
+            
+            <h2>Waarom Professionele Installatie Belangrijk Is</h2>
+            <ul>
+                <li><strong>Vakmanschap:</strong> Professionele installateurs hebben de kennis en ervaring om het werk correct en efficiënt uit te voeren.</li>
+                <li><strong>Veiligheid:</strong> Glasinstallatie kan gevaarlijk zijn. Professionals hebben de juiste uitrusting en training om veilig te werken.</li>
+                <li><strong>Garantie:</strong> Veel professionele installateurs bieden garanties op hun werk, wat je gemoedsrust geeft.</li>
+                <li><strong>Naleving van Bouwvoorschriften:</strong> Professionals zijn op de hoogte van de lokale bouwvoorschriften en zorgen ervoor dat de installatie hieraan voldoet.</li>
+            </ul>
+            
+            <p>Wij werken volgens het bouwbesluit en zijn volledig verzekerd. Indien een vergunning nodig is, kunnen wij dit voor u regelen. Ook voor monumenten en beschermd dorpsgezicht hebben wij oplossingen voor nieuw glas beschikbaar die aan alle vereisten voldoen.</p>
+            
+            <p>Daarnaast is er subsidie beschikbaar voor isolerend glas en wij voldoen aan alle vereisten om u te helpen deze subsidie te verkrijgen.</p>
+            
+            <h2>Conclusie</h2>
+            <p>De voordelen van dubbel glas zijn talrijk, van verbeterde energie-efficiëntie tot verhoogde veiligheid. Door te kiezen voor speciaal glas zoals brandwerend, zonwerend of gelaagd glas, kun je de voordelen nog verder vergroten. En door het glas door professionals te laten installeren, verzeker je jezelf van een hoogwaardige afwerking die jaren meegaat en bijdraagt aan het comfort en de waarde van je huis. Investeer in je toekomst, bespaar op stookkosten en draag bij aan een duurzamere wereld.</p>
+
+            <div class="faq">
+                <h3>Veelgestelde Vragen (FAQ)</h3>
+                <dl>
+                    <dt class="faq-item">Wat is het verschil tussen enkel glas en dubbel glas?</dt>
+                    <dd class="faq-content">Enkel glas bestaat uit één enkele laag glas, terwijl dubbel glas uit twee lagen glas bestaat met een isolerende laag ertussen. Dubbel glas biedt betere isolatie en geluidsdemping. <a href="#" class="faq-link">Meer informatie</a></dd>
+                    
+                    <dt class="faq-item">Hoe weet ik of mijn ramen toe zijn aan vervanging?</dt>
+                    <dd class="faq-content">Als je merkt dat er veel tocht is, condensatie op de ramen voorkomt of je hoge energiekosten hebt, kan het tijd zijn om je ramen te vervangen. <a href="#" class="faq-link">Meer informatie</a></dd>
+                    
+                    <dt class="faq-item">Wat kost het om dubbel glas te laten installeren?</dt>
+                    <dd class="faq-content">De kosten variëren afhankelijk van het type glas, de grootte van de ramen en de complexiteit van de installatie. Het is het beste om een offerte op maat aan te vragen bij een professionele installateur. <a href="#" class="faq-link">Meer informatie</a></dd>
+                    
+                    <dt class="faq-item">Heb ik een vergunning nodig voor het vervangen van mijn ramen?</dt>
+                    <dd class="faq-content">Dit hangt af van je locatie en de aard van de vervangingen. In sommige gevallen is een vergunning nodig, vooral bij monumentale panden of ingrijpende veranderingen. <a href="#" class="faq-link">Meer informatie</a></dd>
+                    
+                    <dt class="faq-item">Hoe lang duurt het om nieuw glas te installeren?</dt>
+                    <dd class="faq-content">De installatie van nieuw glas kan variëren van een paar uur tot een paar dagen, afhankelijk van het aantal ramen en de complexiteit van de installatie. <a href="#" class="faq-link">Meer informatie</a></dd>
+                </dl>
+            </div>
+            
+            <div class="keywords">
+                <h3>Relevante Zoekwoorden</h3>
+                <p>Voordelen van dubbel glas # Dubbel glas energie-efficiëntie # Geluidsisolatie ramen # Veiligheid gelaagd glas # Vermijden condensatie ramen # Brandwerend glas # Zonwerend glas voordelen # Hoe kies je het juiste glas # Glasinstallatie kosten # Professionele glasinstallatie</p>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <h3>Suggesties voor Andere Artikelen</h3>
+            <ul class="suggestions">
+                <li><a href="#">Wat zijn de Voordelen van Dubbel Glas?</a></li>
+                <li><a href="#">Hoe Kies je het Beste Glas voor je Huis?</a></li>
+                <li><a href="#">Hoe Verloopt het Proces van Glasinstallatie?</a></li>
+                <li><a href="#">Hoeveel Kan ik Besparen met Energie-efficiënte Ramen?</a></li>
+                <li><a href="#">Hoe Wordt Historisch Glas Gerestaureerd?</a></li>
+                <li><a href="#">Waarom is Professionele Glasinstallatie Belangrijk voor de Veiligheid?</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Glaszetbedrijf. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                if (content.classList.contains('show')) {
+                    content.classList.remove('show');
+                } else {
+                    content.classList.add('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

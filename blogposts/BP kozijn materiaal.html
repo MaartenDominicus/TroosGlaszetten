@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogpost - Inbraakbeveiliging: De Beste Bescherming voor Uw Woning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+        .title-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .title-bar img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .title-bar img:hover {
+            transform: scale(1.1);
+        }
+        .title-bar .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .title-bar .quick-links a:hover {
+            color: #ff9900;
+        }
+        .container {
+            display: flex;
+            margin-top: 80px; /* Increased space for the title bar */
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 1px solid #ddd;
+            position: sticky;
+            top: 20px; /* Offset from the top of the viewport */
+            animation: slideIn 1s ease-out;
+        }
+        h1, h2 {
+            color: #333;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        ol, ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ol li, ul li {
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        .suggestions a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+        .suggestions a:hover {
+            color: #004999;
+            text-decoration: underline;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .search-bar input[type="text"]:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        .social-media a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: #ff9900;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        footer:hover {
+            background-color: #444;
+        }
+        .faq {
+            margin-top: 20px;
+        }
+        .faq h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 0;
+            transition: color 0.3s ease;
+        }
+        .faq h3:hover {
+            color: #0066cc;
+        }
+        .faq dt {
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+            transition: color 0.3s ease;
+        }
+        .faq dt:hover {
+            color: #0066cc;
+        }
+        .faq dt::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .faq dd {
+            display: none;
+            margin: 0;
+            padding: 0 0 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq dd.show {
+            display: block;
+            opacity: 1;
+            max-height: 500px; /* Arbitrary large value to accommodate content */
+        }
+        .faq dt.active::after {
+            transform: rotate(180deg);
+        }
+        .keywords {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+        .keywords h3 {
+            margin-top: 0;
+        }
+        .faq-link {
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <img src="logo.png" alt="Logo">
+        <div class="quick-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Zoek...">
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+    
+    ```html
+<div class="container">
+    <div class="content">
+        <h1 style="padding-top:15px;">Wat zijn de Verschillen tussen Houten, Vinyl en Aluminium Raamkozijnen?</h1>
+        <p>Het kiezen van het juiste materiaal voor raamkozijnen is essentieel voor de esthetiek, duurzaamheid en energie-efficiëntie van uw woning. Hier zijn de belangrijkste verschillen tussen houten, vinyl (PVC) en aluminium raamkozijnen, evenals enkele andere opties:</p>
+
+        <h2>Houten Raamkozijnen</h2>
+        <p><strong>Voordelen:</strong></p>
+        <ul>
+            <li><strong>Esthetiek:</strong> Hout biedt een warme, natuurlijke uitstraling en past goed bij traditionele en historische gebouwen.</li>
+            <li><strong>Isolatie:</strong> Houten kozijnen hebben uitstekende thermische isolatie-eigenschappen.</li>
+            <li><strong>Aanpasbaarheid:</strong> Hout kan gemakkelijk worden aangepast en geschilderd in elke gewenste kleur.</li>
+        </ul>
+        <p><strong>Nadelen:</strong></p>
+        <ul>
+            <li><strong>Onderhoud:</strong> Houten kozijnen vereisen regelmatig onderhoud zoals schilderen en lakken om ze in goede staat te houden.</li>
+            <li><strong>Kosten:</strong> Over het algemeen duurder dan vinyl en aluminium.</li>
+            <li><strong>Gevoeligheid voor Weersomstandigheden:</strong> Hout kan uitzetten, krimpen of rotten bij blootstelling aan vocht en extreme weersomstandigheden.</li>
+        </ul>
+
+        <h2>Vinyl (PVC) Raamkozijnen</h2>
+        <p><strong>Voordelen:</strong></p>
+        <ul>
+            <li><strong>Onderhoudsvriendelijk:</strong> Vinyl kozijnen zijn onderhoudsarm en hoeven niet geschilderd te worden.</li>
+            <li><strong>Kosten:</strong> Over het algemeen goedkoper dan houten en aluminium kozijnen.</li>
+            <li><strong>Isolatie:</strong> Goede thermische en akoestische isolatie.</li>
+        </ul>
+        <p><strong>Nadelen:</strong></p>
+        <ul>
+            <li><strong>Esthetiek:</strong> Vinyl biedt minder esthetische flexibiliteit en kan er minder luxe uitzien dan hout.</li>
+            <li><strong>Duurzaamheid:</strong> Hoewel duurzaam, kunnen goedkope vinyl kozijnen na verloop van tijd verkleuren of vervormen.</li>
+            <li><strong>Milieu-impact:</strong> PVC-productie is minder milieuvriendelijk.</li>
+        </ul>
+
+        <h2>Aluminium Raamkozijnen</h2>
+        <p><strong>Voordelen:</strong></p>
+        <ul>
+            <li><strong>Duurzaamheid:</strong> Zeer duurzaam en bestand tegen corrosie.</li>
+            <li><strong>Sterkte:</strong> Aluminium kozijnen zijn sterk en kunnen grote glasoppervlakken ondersteunen met slanke profielen.</li>
+            <li><strong>Onderhoudsvriendelijk:</strong> Vereisen weinig onderhoud en zijn eenvoudig schoon te maken.</li>
+        </ul>
+        <p><strong>Nadelen:</strong></p>
+        <ul>
+            <li><strong>Isolatie:</strong> Aluminium is een slechte isolator, maar moderne aluminium kozijnen met thermische onderbrekingen kunnen dit probleem deels oplossen.</li>
+            <li><strong>Kosten:</strong> Over het algemeen duurder dan vinyl, maar vaak goedkoper dan hoogwaardig hout.</li>
+            <li><strong>Esthetiek:</strong> Minder geschikt voor traditionele en historische gebouwen vanwege de moderne uitstraling.</li>
+        </ul>
+
+        <h2>Andere Opties</h2>
+        <h3>Fiberglas Raamkozijnen</h3>
+        <ul>
+            <li><strong>Voordelen:</strong> Zeer sterk en duurzaam, uitstekende isolatie-eigenschappen, onderhoudsarm.</li>
+            <li><strong>Nadelen:</strong> Hogere kosten in vergelijking met vinyl en soms aluminium.</li>
+        </ul>
+        <h3>Composiet Raamkozijnen</h3>
+        <ul>
+            <li><strong>Voordelen:</strong> Combineren de voordelen van hout en vinyl, bieden goede isolatie en zijn onderhoudsarm.</li>
+            <li><strong>Nadelen:</strong> Kunnen duurder zijn dan zowel vinyl als aluminium.</li>
+        </ul>
+
+        <h2>Conclusie</h2>
+        <p>De keuze voor het juiste materiaal voor uw raamkozijnen hangt af van uw specifieke behoeften, budget en de stijl van uw woning. Houten kozijnen zijn ideaal voor een klassieke uitstraling en uitstekende isolatie, maar vergen meer onderhoud. Vinyl kozijnen bieden een onderhoudsarme en kosteneffectieve oplossing met goede isolatie-eigenschappen. Aluminium kozijnen zijn perfect voor moderne woningen die grote, slanke raamprofielen vereisen, maar kunnen minder goed isoleren tenzij ze thermisch onderbroken zijn. Fiberglas en composiet bieden een balans van duurzaamheid, isolatie en onderhoudsgemak, maar komen met een hoger prijskaartje.</p>
+        <p>Heeft u hulp nodig bij het kiezen van de beste raamkozijnen voor uw huis? Neem contact met ons op voor deskundig advies en een breed scala aan hoogwaardige raamoplossingen.</p>
+
+        <div class="faq">
+            <h3>Veelgestelde Vragen (FAQ)</h3>
+            <dl>
+                <dt class="faq-item">Wat is het verschil tussen houten, vinyl en aluminium raamkozijnen?</dt>
+                <dd class="faq-content">Houten raamkozijnen bieden een natuurlijke uitstraling en uitstekende isolatie, maar vereisen meer onderhoud. Vinyl kozijnen zijn onderhoudsarm en kosteneffectief, terwijl aluminium kozijnen sterk en duurzaam zijn, maar mogelijk minder goed isoleren. <a href="#" class="faq-link">Meer informatie</a></dd>
+
+                <dt class="faq-item">Hoe weet ik welk materiaal het beste is voor mijn raamkozijnen?</dt>
+                <dd class="faq-content">Het beste materiaal voor uw raamkozijnen hangt af van uw behoeften, budget en stijl van uw woning. Overweeg factoren zoals onderhoud, kosten en isolatie bij het maken van uw keuze. <a href="#" class="faq-link">Meer informatie</a></dd>
+
+                <dt class="faq-item">Wat zijn de voordelen van fiberglas raamkozijnen?</dt>
+                <dd class="faq-content">Fiberglas raamkozijnen zijn zeer sterk, duurzaam en bieden uitstekende isolatie. Ze zijn ook onderhoudsarm, maar komen met hogere kosten vergeleken met vinyl en soms aluminium. <a href="#" class="faq-link">Meer informatie</a></dd>
+
+                <dt class="faq-item">Kan ik mijn raamkozijnen aanpassen of schilderen?</dt>
+                <dd class="faq-content">Houten kozijnen kunnen gemakkelijk worden aangepast en geschilderd in elke gewenste kleur. Vinyl en aluminium kozijnen bieden minder esthetische flexibiliteit. <a href="#" class="faq-link">Meer informatie</a></dd>
+
+                <dt class="faq-item">Hoe onderhoud ik mijn raamkozijnen?</dt>
+                <dd class="faq-content">Houten kozijnen vereisen regelmatig schilderen en lakken. Vinyl en aluminium kozijnen zijn onderhoudsarm en vereisen slechts af en toe schoonmaken. <a href="#" class="faq-link">Meer informatie</a></dd>
+            </dl>
+        </div>
+
+        <div class="keywords">
+            <h3>Relevante Zoekwoorden</h3>
+            <p># Houten raamkozijnen # Vinyl kozijnen voordelen # Aluminium raamkozijnen # Onderhoud raamkozijnen # Isolatie houten kozijnen # Kosten vinyl kozijnen # Duurzaamheid aluminium kozijnen # Fiberglas kozijnen # Composiet raamkozijnen # Beste raamkozijnen materiaal</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h3>Suggesties voor Andere Artikelen</h3>
+        <ul class="suggestions">
+            <li><a href="#">Wat zijn de Voordelen van Dubbel Glas?</a></li>
+            <li><a href="#">Hoe Kies je het Beste Glas voor je Huis?</a></li>
+            <li><a href="#">Hoe Verloopt het Proces van Glasinstallatie?</a></li>
+            <li><a href="#">Hoeveel Kan ik Besparen met Energie-efficiënte Ramen?</a></li>
+            <li><a href="#">Hoe Wordt Historisch Glas Gerestaureerd?</a></li>
+            <li><a href="#">Waarom is Professionele Glasinstallatie Belangrijk voor de Veiligheid?</a></li>
+        </ul>
+    </div>
+</div>
+```
+    
+
+    <footer>
+        <p>&copy; 2024 Uw Bedrijf. Alle rechten voorbehouden. <br> <a href="#">Privacybeleid</a> | <a href="#">Algemene Voorwaarden</a></p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq dt').forEach(dt => {
+            dt.addEventListener('click', () => {
+                const dd = dt.nextElementSibling;
+                const isActive = dt.classList.toggle('active');
+                dd.classList.toggle('show', isActive);
+            });
+        });
+    </script>
+</body>
+</html>

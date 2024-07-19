@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Blog</title>
+    <style>
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            display: flex;
+            margin-top: 80px; /* Increased space for the title bar */
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .content {
+            flex: 3;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        .title-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .title-bar img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .title-bar img:hover {
+            transform: scale(1.1);
+        }
+        .title-bar .quick-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .title-bar .quick-links a:hover {
+            color: #ff9900;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .main {
+            flex: 3;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .sidebar {
+            flex: 1;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: block;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+        }
+        .sidebar ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            color: #004999;
+            text-decoration: underline;
+        }
+
+        .suggestions a {
+            text-decoration: none;
+            color: #0066cc;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+        .suggestions a:hover {
+            color: #004999;
+            text-decoration: underline;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .grid-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33.333% - 40px);
+            margin: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .grid-item-content {
+            padding: 20px;
+        }
+        .grid-item h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .grid-item p {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 800px) {
+            .sidebar {
+            flex: 1;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-top:20px;
+            margin-right:20px;
+            display: block;
+        }
+            .main {
+                flex: 1 1 100%;
+            }
+            .grid-item {
+                flex: 1 1 calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-item {
+                flex: 1 1 100%;
+            }            
+            .main{
+                padding-left:40px;
+            }
+
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .search-bar input[type="text"]:focus {
+            border-color: #0066cc;
+            outline: none;
+        }
+        .social-media a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: #ff9900;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        footer:hover {
+            background-color: #444;
+        }
+        .faq {
+            margin: 7%;
+            margin-left:10%;
+        }
+        .faq h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 0;
+            transition: color 0.3s ease;
+        }
+        .faq h3:hover {
+            color: #0066cc;
+        }
+        .faq dt {
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+            transition: color 0.3s ease;
+        }
+        .faq dt:hover {
+            color: #0066cc;
+        }
+        .faq dt::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 12px;
+            color: #333;
+            transition: transform 0.3s ease;
+        }
+        .faq dd {
+            display: none;
+            margin: 0;
+            padding: 0 0 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq dd.show {
+            display: block;
+            opacity: 1;
+            max-height: 500px; /* Arbitrary large value to accommodate content */
+        }
+        .faq dt.active::after {
+            transform: rotate(180deg);
+        }
+        .keywords {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+        .keywords h3 {
+            margin-top: 0;
+        }
+        .faq-link {
+            color: #0066cc;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <img src="logo.png" alt="Logo">
+        <div class="quick-links">
+            <a href="../index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Zoek...">
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top:5%;">
+        <div class="main">
+            <div class="grid">
+                <div class="grid-item">
+                    <img src="post1.jpg" alt="Blogpost 1">
+                    <div class="grid-item-content">
+                        <h2><a href="BP bouwvoorschriften.html" style="text-decoration: none; color: #333;">Bouw voorschriften</a></h2>
+                        <p>Aan welke normen en regels is glas en kozijn installatie onderworpen? </p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="post2.jpg" alt="Blogpost 2">
+                    <div class="grid-item-content">
+                        <h2><a href="BP dakraam.html" style="text-decoration: none; color: #333;">Dakraam voordelen</a></h2>
+                        <p>Hoe een dakraam of lichtstraat uw woning verbeterd en waar u op moet letten.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="post3.jpg" alt="Blogpost 3">
+                    <div class="grid-item-content">
+                        <h2><a href="BP kozijn materiaal.html" style="text-decoration: none; color: #333;">Kozijn materiaal keuze</a></h2>
+                        <p>Voor- en nadelen van de verschillende opties voor kozijn materialen.</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="post4.jpg" alt="Blogpost 4">
+                    <div class="grid-item-content">
+                        <h2><a href="BP kiezen aannemer.html" style="text-decoration: none; color: #333;">Kiezen Aannemer</a></h2>
+                        <p>Hoe maakt u een weloverwogen keuze aan wie u uw project toevertrouwd?</p>
+                    </div>
+                </div>
+                <!-- Voeg meer grid-items toe zoals nodig -->
+            </div>
+        </div>
+        
+        <aside class="sidebar">
+            <h3>Gesuggereerde Artikelen</h3>
+            <ul>
+                <li><a href="suggested1.html">Gesuggereerd Artikel 1</a></li>
+                <li><a href="suggested2.html">Gesuggereerd Artikel 2</a></li>
+                <li><a href="suggested3.html">Gesuggereerd Artikel 3</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="faq">
+        <h3>Veelgestelde Vragen (FAQ)</h3>
+        <dl>
+            <dt class="faq-item">Welke veiligheidsnormen gelden voor glasinstallatie?</dt>
+            <dd class="faq-content">Veiligheidsglas zoals gehard of gelamineerd glas is vaak vereist voor toepassingen waar veiligheid cruciaal is. Normen zoals EN 12150 en EN 14449 definiëren de eisen voor deze glassoorten. <a href="BP glas soort.html" class="faq-link">Meer informatie</a></dd>
+            
+            <dt class="faq-item">Wat zijn de energie-efficiëntie vereisten voor glas?</dt>
+            <dd class="faq-content">Glasinstallaties moeten voldoen aan isolatie-eisen zoals dubbel of driedubbel glas, en energieprestatiecriteria zoals het Bouwbesluit en EPBD Richtlijn. <a href="BP3-energiebesparing.html" class="faq-link">Meer informatie</a></dd>
+            
+            <dt class="faq-item">Hoe wordt brandveiligheid in glasinstallaties gegarandeerd?</dt>
+            <dd class="faq-content">Brandwerend glas dat voldoet aan normen zoals EN 13501-2 wordt vaak gebruikt in branddeuren en brandwanden om de verspreiding van vuur en rook te vertragen. <a href="BP glas soort.html" class="faq-link">Meer informatie</a></dd>
+            
+            <dt class="faq-item">Wat zijn de esthetische en architectonische regels voor glas?</dt>
+            <dd class="faq-content">Glas moet passen binnen architectonische plannen en esthetische richtlijnen. Bouwvergunningen kunnen nodig zijn voor bepaalde installaties. <a href="#" class="faq-link">Meer informatie</a></dd>
+            
+            <dt class="faq-item">Hoe vaak moet glas worden geïnspecteerd en onderhouden?</dt>
+            <dd class="faq-content">Regelmatige inspectie en
+
+onderhoud zijn vereist om te zorgen dat glas en raamkozijnen voldoen aan veiligheidsnormen en geen risico vormen. <a href="#" class="faq-link">Meer informatie</a></dd>
+            
+            <dt class="faq-item">Welke regels zijn er voor toegankelijkheid en gebruikerscomfort?</dt>
+            <dd class="faq-content">Glasinstallaties moeten voldoen aan toegankelijkheidsnormen en regels voor glashelderheid en reflectie om verblinding en visuele verstoringen te minimaliseren. <a href="#" class="faq-link">Meer informatie</a></dd>
+        </dl>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mijn Blog</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq dt').forEach(dt => {
+            dt.addEventListener('click', () => {
+                const dd = dt.nextElementSibling;
+                const isActive = dt.classList.toggle('active');
+                dd.classList.toggle('show', isActive);
+            });
+        });
+    </script>
+
+</body>
+</html>
