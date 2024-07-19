@@ -4,208 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogpost - Inbraakbeveiliging: De Beste Bescherming voor Uw Woning</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            overflow-x: hidden;
-            transition: background-color 0.3s ease;
-        }
-        .title-bar {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .title-bar img {
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
-        .title-bar img:hover {
-            transform: scale(1.1);
-        }
-        .title-bar .quick-links a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        .title-bar .quick-links a:hover {
-            color: #ff9900;
-        }
-        .container {
-            display: flex;
-            margin-top: 80px; /* Increased space for the title bar */
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
-        }
-        .container:hover {
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        .content {
-            flex: 3;
-            padding: 20px;
-            animation: fadeIn 1s ease-out;
-        }
-        .sidebar {
-            flex: 1;
-            padding: 20px;
-            background: #f9f9f9;
-            border-left: 1px solid #ddd;
-            position: sticky;
-            top: 20px; /* Offset from the top of the viewport */
-            animation: slideIn 1s ease-out;
-        }
-        h1, h2 {
-            color: #333;
-            animation: fadeIn 1s ease-out;
-        }
-        h1 {
-            margin-top: 0;
-        }
-        ol, ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ol li, ul li {
-            margin: 10px 0;
-            transition: background-color 0.3s ease;
-        }
-        .suggestions a {
-            text-decoration: none;
-            color: #0066cc;
-            transition: color 0.3s ease, text-decoration 0.3s ease;
-        }
-        .suggestions a:hover {
-            color: #004999;
-            text-decoration: underline;
-        }
-        .search-bar input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: border-color 0.3s ease;
-        }
-        .search-bar input[type="text"]:focus {
-            border-color: #0066cc;
-            outline: none;
-        }
-        .social-media a {
-            color: #0066cc;
-            text-decoration: none;
-            margin: 0 5px;
-            transition: color 0.3s ease;
-        }
-        .social-media a:hover {
-            color: #ff9900;
-        }
-        footer {
-            margin-top: 20px;
-            padding: 10px;
-            text-align: center;
-            background: #333;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-        footer:hover {
-            background-color: #444;
-        }
-        .faq {
-            margin-top: 20px;
-        }
-        .faq h3 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            margin-top: 0;
-            transition: color 0.3s ease;
-        }
-        .faq h3:hover {
-            color: #0066cc;
-        }
-        .faq dt {
-            font-weight: bold;
-            margin-top: 10px;
-            cursor: pointer;
-            position: relative;
-            padding-right: 30px;
-            transition: color 0.3s ease;
-        }
-        .faq dt:hover {
-            color: #0066cc;
-        }
-        .faq dt::after {
-            content: '▼';
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 12px;
-            color: #333;
-            transition: transform 0.3s ease;
-        }
-        .faq dd {
-            display: none;
-            margin: 0;
-            padding: 0 0 10px 0;
-            opacity: 0;
-            transition: opacity 0.3s ease, max-height 0.3s ease;
-            max-height: 0;
-            overflow: hidden;
-        }
-        .faq dd.show {
-            display: block;
-            opacity: 1;
-            max-height: 500px; /* Arbitrary large value to accommodate content */
-        }
-        .faq dt.active::after {
-            transform: rotate(180deg);
-        }
-        .keywords {
-            margin-top: 20px;
-            padding: 10px;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            font-size: 0.9em;
-        }
-        .keywords h3 {
-            margin-top: 0;
-        }
-        .faq-link {
-            color: #0066cc;
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-    </style>
+    <link rel="stylesheet" href="css/blogpost.css">
 </head>
 <body>
     <div class="title-bar">
-        <img src="logo.png" alt="Logo">
+        <img src="img/about page 1/TROOS1.png" alt="Logo">
         <div class="quick-links">
             <a href="#">Home</a>
             <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#">Contact </a>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Zoek...">
@@ -217,9 +24,9 @@
         </div>
     </div>
     
-    ```html
 <div class="container">
     <div class="content">
+        <img class="blogPostImg" src="velux.jpg" alt="">
         <h1 style="padding-top:15px;">Wat zijn de Voordelen van Dakramen in je Huis?</h1>
         <p>Dakramen zijn een uitstekende manier om extra natuurlijk licht en ventilatie in uw woning te brengen, en ze kunnen een significant verschil maken in de esthetiek en functionaliteit van uw huis. Hier zijn de belangrijkste voordelen van dakramen, met nadruk op hoe ze bijdragen aan lichtinval en andere voordelen:</p>
         
