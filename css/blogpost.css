@@ -194,3 +194,24 @@ footer:hover {
     width: 90%; 
     padding-top:5%;
 }
+.breadcrumb {
+    list-style: none;
+    display: flex;
+}
+.breadcrumb li {
+    margin: 0 5px;
+}
+.breadcrumb li a {
+    text-decoration: none;
+    color: blue;
+}
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+.breadcrumb li::after {
+    content: ">";
+    margin-left: 5px;
+}
+.breadcrumb li:last-child::after {
+    content: "";
+}
